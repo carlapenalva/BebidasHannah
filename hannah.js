@@ -11,11 +11,11 @@ else {
 }
 
 let operacion =prompt("Ingrese comprar si desea comprar un producto, información si desea información sobre un producto o finalizar si desea finalizar la operacion");
-let suma = 0
+let adicion = 0
 while ((operacion=="comprar") || (operacion=="Comprar") || (operacion=="COMPRAR")) {
     alert("Su compra ha sido exitosa");
-    suma = suma+1;
-    console.log("Su cantidad de compras es de ", suma);
+    adicion = adicion+1;
+    console.log("Su cantidad de compras es de ", adicion);
     operacion= prompt("Ingrese comprar si desea comprar un producto, información si desea información sobre un producto o finalizar si desea finalizar la operacion");
 }
 
@@ -59,7 +59,9 @@ function validarCalculo (calculo) {
         }
     }
 }
+let calculo = prompt("Para realizar una suma coloque 1, para una division 2, para una resta 3, para una multiplicacion 4")
 
+validarCalculo(calculo)
 
 function suma(primerNumero, segundoNumero){
     let suma = primerNumero + segundoNumero
