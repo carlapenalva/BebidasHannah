@@ -1,5 +1,5 @@
 //La idea es poder realizar un ecommerce de bebidas como proyecto final. Con lo que aprendimos hasta hoy busque lograr las bases del mismo
-let edad = parseInt(prompt ("Ingrese su edad"));
+/*let edad = parseInt(prompt ("Ingrese su edad"));
 if (edad<18) {
     alert ("Sos menor de edad, no podes acceder a esta pagina")
 }
@@ -81,7 +81,90 @@ function resta(primerNumero, segundoNumero){
 function multiplicacion(primerNumero, segundoNumero){
     let multiplicacion = primerNumero*segundoNumero;
     console.log("El resultado de la multiplicacion es :", multiplicacion)
+} */
+
+
+//ARRAYS,CLASES 
+
+class bebida {
+    constructor (nombre, tipo, marca, precio, stock) {
+        this.nombre =nombre;
+        this.tipo =tipo;
+        this.marca =marca;
+        this.precio =precio;
+        this.stock =stock
+    }
+
+    get_datos(){
+        console.log("DATOS DEL PRODUCTO");
+        console.log('Nombre' , this.nombre);
+        console.log("Tipo de bebida:" , this.tipo);
+        console.log("Marca:" , this.marca);
+        console.log("Precio:" , this.precio);
+        console.log("Stock:" , this.stock);
+        console.log("    ");
+    }
+
+    get_stock(){
+        if(this.stock >= 1){
+        console.log("Tenemos stock del producto:" , this.stock);
+        }
+    
+    }
+
+    set_compra(cantidad){
+
+        this.stock = this.stock + cantidad;
+
+    }
+
+    set_venta(cantidad){
+
+        if(this.stock >= cantidad){
+            this.stock = this.stock - cantidad
+            console.log ("venta realizada");
+        }
+        else{
+            console.log ("No disponemos de stock para esta venta")
+        }
+    }
+
 }
 
+let arrayBebidas = []
+arrayBebidas.push(new bebida("fernet", "aperitivo", "branca", 1800, 3))
+arrayBebidas.push(new bebida("fernet", "aperitivo", "1888", 1500, 1))
+arrayBebidas.push(new bebida("vodka", "bebida blanca", "absolut", 1750, 5))
 
-//*let iva, calcule el iva de su compra.
+mostrarDatosBebidas(arrayBebidas)
+mostrarStockBebidas(arrayBebidas)
+
+let total = totalFernets(arrayBebidas)
+console.log("Tenemos ",total," cantidad de fernet");
+
+let exisencia = arrayBebidas.find((el) => el.marca === "absolut")
+console.log("La info en nuestro stock del vodka absolut es:", exisencia)
+
+function totalFernets(arrayBebidas){
+    let suma = 0
+    for(const bebida of arrayBebidas){
+        if(bebida.nombre === "fernet"){
+            suma = suma + bebida.stock
+        }
+    }
+
+    return suma
+}
+
+function mostrarDatosBebidas(arrayBebidas){
+    for(const bebida of arrayBebidas){
+        bebida.get_datos()
+    }
+}
+
+function mostrarStockBebidas(arrayBebidas){
+    for(const bebida of arrayBebidas){
+        bebida.get_stock()
+    }
+} 
+
