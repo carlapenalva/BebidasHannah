@@ -81,8 +81,8 @@ function resta(primerNumero, segundoNumero){
 function multiplicacion(primerNumero, segundoNumero){
     let multiplicacion = primerNumero*segundoNumero;
     console.log("El resultado de la multiplicacion es :", multiplicacion)
-} */
-
+} 
+*/
 
 //ARRAYS,CLASES 
 
@@ -168,3 +168,16 @@ function mostrarStockBebidas(arrayBebidas){
     }
 } 
 
+
+
+
+function agregarCarrito(e){
+    console.log("Producto agregado");
+    console.log(e.target);
+}
+
+let botonCompra= document.querySelectorAll(".botonCompra");
+
+for(let boton of botonCompra){
+    boton.addEventListener("click" , agregarCarrito);
+}
