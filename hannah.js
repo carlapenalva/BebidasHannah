@@ -9,7 +9,8 @@ else if (edad>=18){
 else {
     alert ("No deciframos tu edad, por favor complete este campo")
 }
-
+*/
+/*
 let operacion =prompt("Ingrese comprar si desea comprar un producto, información si desea información sobre un producto o finalizar si desea finalizar la operacion");
 let adicion = 0
 while ((operacion=="comprar") || (operacion=="Comprar") || (operacion=="COMPRAR")) {
@@ -85,65 +86,8 @@ function multiplicacion(primerNumero, segundoNumero){
 */
 
 //ARRAYS,CLASES 
+/*
 
-class bebida {
-    constructor (nombre, tipo, marca, precio, stock) {
-        this.nombre =nombre;
-        this.tipo =tipo;
-        this.marca =marca;
-        this.precio =precio;
-        this.stock =stock
-    }
-
-    get_datos(){
-        console.log("DATOS DEL PRODUCTO");
-        console.log('Nombre' , this.nombre);
-        console.log("Tipo de bebida:" , this.tipo);
-        console.log("Marca:" , this.marca);
-        console.log("Precio:" , this.precio);
-        console.log("Stock:" , this.stock);
-        console.log("    ");
-    }
-
-    get_stock(){
-        if(this.stock >= 1){
-        console.log("Tenemos stock del producto:" , this.stock);
-        }
-    
-    }
-
-    set_compra(cantidad){
-
-        this.stock = this.stock + cantidad;
-
-    }
-
-    set_venta(cantidad){
-
-        if(this.stock >= cantidad){
-            this.stock = this.stock - cantidad
-            console.log ("venta realizada");
-        }
-        else{
-            console.log ("No disponemos de stock para esta venta")
-        }
-    }
-
-}
-
-let arrayBebidas = []
-arrayBebidas.push(new bebida("fernet", "aperitivo", "branca", 1800, 3))
-arrayBebidas.push(new bebida("fernet", "aperitivo", "1888", 1500, 1))
-arrayBebidas.push(new bebida("vodka", "bebida blanca", "absolut", 1750, 5))
-
-mostrarDatosBebidas(arrayBebidas)
-mostrarStockBebidas(arrayBebidas)
-
-let total = totalFernets(arrayBebidas)
-console.log("Tenemos ",total," cantidad de fernet");
-
-let exisencia = arrayBebidas.find((el) => el.marca === "absolut")
-console.log("La info en nuestro stock del vodka absolut es:", exisencia)
 
 function totalFernets(arrayBebidas){
     let suma = 0
@@ -181,3 +125,67 @@ let botonCompra= document.querySelectorAll(".botonCompra");
 for(let boton of botonCompra){
     boton.addEventListener("click" , agregarCarrito);
 }
+*/
+
+class bebida {
+    constructor (id, nombre, precio, img) {
+        this.id =id;
+        this.nombre =nombre;
+        this.precio =precio;
+        this.img =img;
+        this.cantidad =1
+    }
+}
+const arrayBebidas = []
+arrayBebidas.push(new bebida(1, "Fernet branca 450", 1300, "../imagenes/productos/branca450.png"))
+arrayBebidas.push(new bebida(2, "Fernet branca 750", 1600, "../imagenes/productos/branca750.png"))
+arrayBebidas.push(new bebida(3, "Fernet branca 1LT", 1900, "../imagenes/productos/fernetBranca1lt.png"))
+arrayBebidas.push(new bebida(4, "Fernet 1882", 1500, "../imagenes/productos/fernet1882.png"))
+arrayBebidas.push(new bebida(5, "Vodka Absolut", 2600, "../imagenes/productos/absolut.png"))
+arrayBebidas.push(new bebida(6, "Absolut saborizado",  2900, "../imagenes/productos/absolutSaborizado.png"))
+arrayBebidas.push(new bebida(7,"Vodka Smirnoff",  1900, "../imagenes/productos/vodkaSmirnoff.png"))
+arrayBebidas.push(new bebida(8,"Smirnoff saborizado", 2100, "../imagenes/productos/smirnoffSaborizado.png"))
+arrayBebidas.push(new bebida(9,"Gin Heraclito",  2300, "../imagenes/productos/ginHeraclito.png"))
+arrayBebidas.push(new bebida(10,"Gin Gordon's", 2000, "../imagenes/productos/gordond.png"))
+arrayBebidas.push(new bebida(11,"Gin Beefeater",  3100, "../imagenes/productos/beefeater.png"))
+arrayBebidas.push(new bebida(12,"Campari", 1700, "../imagenes/productos/campari.png"))
+arrayBebidas.push(new bebida(13,"Ron Bacardi", 2400, "../imagenes/productos/ronBacardi.png"))
+arrayBebidas.push(new bebida(14,"Havana Club", 1700, "../imagenes/productos/havanaClub"))
+arrayBebidas.push(new bebida(15,"Malibu", 2100, "../imagenes/productos/malibu.png"))
+arrayBebidas.push(new bebida(16,"Red Label", 2800, "../imagenes/productos/redLabel.png"))
+arrayBebidas.push(new bebida(17,"Blenders Pride", 5400, "../imagenes/productos/blendersPride.png"))
+arrayBebidas.push(new bebida(18,"Chivas", 6700, "../imagenes/productos/chivas.png"))
+
+
+
+
+const listaProductos = document.getElementById("listaProductos");
+
+function cargarProductos() {
+ arrayBebidas.forEach (bebida =>{
+    const div = document.createElement("div");
+    div.classList.add("producto");
+    div.innerHTML = `
+    <img src="${bebida.img}" alt="${bebida.nombre}">
+    <h2>${bebida.nombre}</h2>
+    <h3>$${bebida.precio}</h3>
+    <button class="botonCompra" id="${bebida.id}">AGREGAR</button>
+    `;
+    listaProductos.append(div);
+ })   
+}
+cargarProductos();
+
+let botonCompra = document.getElementById ("botonCompra");
+
+
+const carrito= document.getElementById("carrito");
+const abrirCarrito= document.getElementById("abrir");
+const cerrarCarrito= document.getElementById("cerrar");
+
+carrito = [];
+
+/*botonCompra.addEventListener ("click", () =>{
+
+})
+*/
