@@ -183,6 +183,12 @@ const carrito= document.getElementById("carrito");
 const abrirCarrito= document.getElementById("abrir");
 const cerrarCarrito= document.getElementById("cerrar");
 
+abrirCarrito.addEventListener("click", ()=>{
+ carrito.classList.add("visible"); 
+})
+cerrarCarrito.addEventListener("click", () => {
+    carrito.classList.remove("visible");
+})
 carrito = [];
 
 /*botonCompra.addEventListener ("click", () =>{
