@@ -14,14 +14,38 @@ body {
 
 }
 
-main {
-    margin: 0px;
-    padding-top: 0px;
-    padding-bottom: 2em;
-    /*background-image: url(../imagenes/tragos.jpg);*/
-    background-color: black;
+@media (min-width: 150px) {
+    main {
+        margin: 0px;
+        padding-top: 0px;
+        padding-bottom: 2em;
+        background-color: black;
+    }
+    main div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-bottom: solid 1px whitesmoke;
+    }
+    h1 {
+        font-size: 4em;
+        font-family: 'Roboto', sans-serif;
+    }
+    ul li a{
+        text-decoration: none;
+        color:aliceblue;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        font-size: large;
+    }
+    .carrusel {
+        display: none;
+    }
 }
 
+@media (min-width: 800px){
 main div {
     display: flex;
     flex-direction: row;
@@ -32,7 +56,6 @@ main div {
 }
 h1 {
     font-size: 6em;
-    font-family: 'Roboto', sans-serif;
 }
 
 nav ul {
@@ -42,14 +65,7 @@ nav ul {
 }
 
 ul li a{
-    text-decoration: none;
-    color:aliceblue;
-    /**background-color: black;**/
-    margin-bottom: 0px;
-    padding-bottom: 0px;
     font-size: xx-large;
-    /**margin-right: 35em;
-    margin-left: 35em;**/
 }
 .carrusel {
     margin-left: 2em;
@@ -175,12 +191,12 @@ button:hover {
 }  
 .cerrarCarrito {
     background-color: rgba(10, 9, 17, 0.678);
-    border: none;
     margin-bottom: 15px;
 }
 .abrirCarrito,
 .cerrarCarrito {
     display: block;
+    border: 0;
 }
 .carrito.visible {
     opacity: 1;
@@ -195,4 +211,9 @@ footer {
 
 footer h4 {
     margin-top: 2em;
+    margin-bottom: 1em;
+}
+.redesSociales {
+    margin-bottom: 1em;
+}
 }
