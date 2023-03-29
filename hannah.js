@@ -98,9 +98,11 @@ function cargarProductos() {
     const button = div.querySelector(".botonCompra");
     button.addEventListener("click", () => {
         agregarCarrito(bebida.id);
-    })
+    })    
 }) 
 }
+const carritoCompra= document.getElementById("carrito");
+const abrirCarrito= document.getElementById("abrir");
 
 function agregarCarrito(id){
     let productoExistente = false;
@@ -116,22 +118,45 @@ function agregarCarrito(id){
       const productos=arrayBebidas.find(bebida=> bebida.id===id);
       carrito.push(productos);
     }
-  
-    console.log(carrito)
-  }
+}
 carrito = [];
 cargarProductos();
 
-let botonCompra = document.getElementById ("botonCompra");
-
-
-const carritoCompras= document.getElementById("carrito");
-const abrirCarrito= document.getElementById("abrir");
-const cerrarCarrito= document.getElementById("cerrar");
 
 abrirCarrito.addEventListener("click", ()=>{
- carritoCompras.classList.add("visible"); 
+ carritoCompra.classList.add("visible");
+ 
+ mostrarCarrito()
 })
-cerrarCarrito.addEventListener("click", () => {
-    carritoCompras.classList.remove("visible");
-})
+
+
+
+function mostrarCarrito(){
+    carritoCompra.innerHTML='<button class."cerrarCarrito" id="cerrar"><img src="../imagenes/logo/cerrarventana.png" alt="cerrar"></button> <h2>Carrito Compras</h2>'
+    const cerrarCarrito= document.getElementById("cerrar");
+    cerrarCarrito.addEventListener("click", () => {
+        carritoCompra.classList.remove("visible");
+    });
+    carrito.forEach (bebida =>{
+        const div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+        <h2>${bebida.nombre}</h2>
+        <h3>$${bebida.precio}</h3>
+        <p>${bebida.cantidad}<p>
+        <button class="botonCompra" id= "eliminar${bebida.id}">Eliminar</button>
+        `;
+        carritoCompra.appendChild(div);
+        const boton=document.getElementById(`eliminar${bebida.id}`);
+        boton.addEventListener("click", ()=>{
+            eliminarDelCarrito(bebida.id);
+        })
+
+})   
+}
+function eliminarDelCarrito(id) {
+    const producto = carrito.find(producto=> bebida.id===id);
+    const indice= carrito.indexOf(producto);
+    carrito.splice(indice,1);
+    mostrarCarrito();
+}

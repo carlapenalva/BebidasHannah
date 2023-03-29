@@ -33,6 +33,7 @@ body {
         font-size: 4em;
         font-family: 'Roboto', sans-serif;
     }
+    
     ul li a{
         text-decoration: none;
         color:aliceblue;
@@ -43,6 +44,45 @@ body {
     .carrusel {
         display: none;
     }
+    
+    .quienes {
+    background-color: rgb(3, 1, 39);
+    color: white;
+    border-radius: 5px;
+    }
+    .donde {
+        background-color: rgb(3, 1, 39);
+        color: white;
+        border-radius: 5px;
+    }
+    .conocenos {
+        background-color: rgb(6, 3, 53);
+        color: white;
+        border-radius: 5px;
+    }
+    .seccionIndex {
+    margin-top: 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: small;
+    }
+    .sectionIndex img {
+            height: 200px;
+            width: 200px;
+    } 
+
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10em;
+        text-align: center;
+        border-top: solid 1px whitesmoke;
+    }
+    
 }
 
 @media (min-width: 800px){
@@ -201,12 +241,6 @@ button:hover {
 .carrito.visible {
     opacity: 1;
     visibility: visible;
-}
-
-footer {
-    margin-top: 10em;
-    text-align: center;
-    border-top: solid 1px whitesmoke;
 }
 
 footer h4 {
