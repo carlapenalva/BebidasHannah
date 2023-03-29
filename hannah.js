@@ -155,7 +155,7 @@ function mostrarCarrito(){
 })   
 }
 function eliminarDelCarrito(id) {
-    const producto = carrito.find(producto=> bebida.id===id);
+    const producto = carrito.find(bebida=> bebida.id===id);
     const indice= carrito.indexOf(producto);
     carrito.splice(indice,1);
     mostrarCarrito();
