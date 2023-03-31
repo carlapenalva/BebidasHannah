@@ -215,6 +215,7 @@ button:hover {
 .abrirCarrito {
     background-color: black;
 }
+
 .carrito {
     opacity: 0;
     visibility: hidden;
@@ -229,12 +230,15 @@ button:hover {
     justify-content: start;
     align-items: center;
 }  
-.cerrarCarrito {
+.carrito h2 {
+    margin-bottom: 10px;
+}
+.cerrarCarrito, .vaciarCarrito{
     background-color: rgba(10, 9, 17, 0.678);
     margin-bottom: 15px;
 }
 .abrirCarrito,
-.cerrarCarrito {
+.cerrarCarrito, .vaciarCarrito {
     display: block;
     border: 0;
 }

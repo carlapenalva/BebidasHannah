@@ -132,7 +132,7 @@ abrirCarrito.addEventListener("click", ()=>{
 
 
 function mostrarCarrito(){
-    carritoCompra.innerHTML='<button class."cerrarCarrito" id="cerrar"><img src="../imagenes/logo/cerrarventana.png" alt="cerrar"></button> <h2>Carrito Compras</h2>'
+    carritoCompra.innerHTML='<button class="cerrarCarrito" id="cerrar"><img src="../imagenes/logo/cerrarventana.png" alt="cerrar"></button> <h2>Carrito Compras</h2> <button class="vaciarCarrito" id="vaciar"><img src="../imagenes/logo/vaciarCompra.png" alt="vaciar"></button>'
     const cerrarCarrito= document.getElementById("cerrar");
     cerrarCarrito.addEventListener("click", () => {
         carritoCompra.classList.remove("visible");
@@ -141,9 +141,9 @@ function mostrarCarrito(){
         const div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
-        <h2>${bebida.nombre}</h2>
-        <h3>$${bebida.precio}</h3>
-        <p>${bebida.cantidad}<p>
+        <p>${bebida.nombre}</p>
+        <p>$${bebida.precio}</p>
+        <p>${bebida.cantidad}</p>
         <button class="botonCompra" id= "eliminar${bebida.id}">Eliminar</button>
         `;
         carritoCompra.appendChild(div);
@@ -151,12 +151,20 @@ function mostrarCarrito(){
         boton.addEventListener("click", ()=>{
             eliminarDelCarrito(bebida.id);
         })
-
+        function eliminarDelCarrito(id) {
+            const producto = carrito.find(bebida=> bebida.id===id);
+            const indice= carrito.indexOf(producto);
+            carrito.splice(indice,1);
+            mostrarCarrito();
+        }
+        const vaciarCarrito= document.getElementById("vaciar");
+        vaciarCarrito.addEventListener("click",()=>{
+            vaciarElCarrito();
+        })
+        
+        function vaciarElCarrito (){
+            carrito = [];
+            mostrarCarrito();
+        }
 })   
-}
-function eliminarDelCarrito(id) {
-    const producto = carrito.find(bebida=> bebida.id===id);
-    const indice= carrito.indexOf(producto);
-    carrito.splice(indice,1);
-    mostrarCarrito();
 }
