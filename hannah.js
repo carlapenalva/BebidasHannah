@@ -98,6 +98,7 @@ function cargarProductos() {
     const button = div.querySelector(".botonCompra");
     button.addEventListener("click", () => {
         agregarCarrito(bebida.id);
+        mostrarCarrito()
     })    
 }) 
 }
@@ -125,8 +126,6 @@ cargarProductos();
 
 abrirCarrito.addEventListener("click", ()=>{
  carritoCompra.classList.add("visible");
- 
- mostrarCarrito()
 })
 
 
