@@ -131,20 +131,23 @@ abrirCarrito.addEventListener("click", ()=>{
 
 
 function mostrarCarrito(){
-    carritoCompra.innerHTML='<button class="cerrarCarrito" id="cerrar"><img src="../imagenes/logo/cerrarventana.png" alt="cerrar"></button> <h2>Carrito Compras</h2> <button class="vaciarCarrito" id="vaciar"><img src="../imagenes/logo/vaciarCompra.png" alt="vaciar"></button>'
+    carritoCompra.innerHTML='<button class="cerrarCarrito" id="cerrar"><img src="../imagenes/logo/cerrarventana.png" alt="cerrar"></button> <h2>Carrito Compras</h2><p id:"total">Total compras: $</p> <button class="vaciarCarrito" id="vaciar"><img src="../imagenes/logo/vaciarCompra.png" alt="vaciar"></button>'
+    const total=document.getElementById("total");
     const cerrarCarrito= document.getElementById("cerrar");
     cerrarCarrito.addEventListener("click", () => {
         carritoCompra.classList.remove("visible");
     });
     carrito.forEach (bebida =>{
         const div = document.createElement("div");
-        div.classList.add("producto");
+        div.classList.add("productoCarrito");
         div.innerHTML = `
         <p>${bebida.nombre}</p>
         <p>$${bebida.precio}</p>
         <p>${bebida.cantidad}</p>
-        <button class="botonCompra" id= "eliminar${bebida.id}">Eliminar</button>
-        `;
+        <button class="botonEliminar" id= "eliminar${bebida.id}">Eliminar</button>
+        <p>Total compra:$${total} </p>
+        `
+        ;
         carritoCompra.appendChild(div);
         const boton=document.getElementById(`eliminar${bebida.id}`);
         boton.addEventListener("click", ()=>{
@@ -165,5 +168,13 @@ function mostrarCarrito(){
             carrito = [];
             mostrarCarrito();
         }
+        
+        function calcularTotal (){
+        let total=0;
+        carrito.forEach(bebida => {
+        total += bebida.precio*bebida.cantidad;
+        })
+    }    
 })   
 }
+
