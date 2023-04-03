@@ -129,52 +129,67 @@ abrirCarrito.addEventListener("click", ()=>{
 })
 
 
-
-function mostrarCarrito(){
-    carritoCompra.innerHTML='<button class="cerrarCarrito" id="cerrar"><img src="../imagenes/logo/cerrarventana.png" alt="cerrar"></button> <h2>Carrito Compras</h2><p id:"total">Total compras: $</p> <button class="vaciarCarrito" id="vaciar"><img src="../imagenes/logo/vaciarCompra.png" alt="vaciar"></button>'
-    const total=document.getElementById("total");
-    const cerrarCarrito= document.getElementById("cerrar");
+function mostrarCarrito() {
+    carritoCompra.innerHTML = `
+      <button class="cerrarCarrito" id="cerrar">
+        <img src="../imagenes/logo/cerrarventana.png" alt="cerrar">
+      </button> 
+      <h2>Carrito Compras</h2>
+      <p class="totalCompra">Total compras: $</p> 
+      <button class="vaciarCarrito" id="vaciar">
+        <img src="../imagenes/logo/vaciarCompra.png" alt="vaciar">
+      </button>
+    `;
+    
+    const totalCompra = document.querySelector('.totalCompra');
+  
+    const cerrarCarrito = document.getElementById("cerrar");
     cerrarCarrito.addEventListener("click", () => {
-        carritoCompra.classList.remove("visible");
+      carritoCompra.classList.remove("visible");
     });
-    carrito.forEach (bebida =>{
-        const div = document.createElement("div");
-        div.classList.add("productoCarrito");
-        div.innerHTML = `
+  
+    carrito.forEach(bebida => {
+      const div = document.createElement("div");
+      div.classList.add("productoCarrito");
+      div.innerHTML = `
         <p>${bebida.nombre}</p>
         <p>$${bebida.precio}</p>
         <p>${bebida.cantidad}</p>
-        <button class="botonEliminar" id= "eliminar${bebida.id}">Eliminar</button>
-        <p>Total compra:$${total} </p>
-        `
-        ;
-        carritoCompra.appendChild(div);
-        const boton=document.getElementById(`eliminar${bebida.id}`);
-        boton.addEventListener("click", ()=>{
-            eliminarDelCarrito(bebida.id);
-        })
-        function eliminarDelCarrito(id) {
-            const producto = carrito.find(bebida=> bebida.id===id);
-            const indice= carrito.indexOf(producto);
-            carrito.splice(indice,1);
-            mostrarCarrito();
-        }
-        const vaciarCarrito= document.getElementById("vaciar");
-        vaciarCarrito.addEventListener("click",()=>{
-            vaciarElCarrito();
-        })
-        
-        function vaciarElCarrito (){
-            carrito = [];
-            mostrarCarrito();
-        }
-        
-        function calcularTotal (){
-        let total=0;
-        carrito.forEach(bebida => {
-        total += bebida.precio*bebida.cantidad;
-        })
-    }    
-})   
-}
-
+        <button class="botonEliminar" id="eliminar${bebida.id}">Eliminar</button>
+      `;
+      carritoCompra.appendChild(div);
+      
+      const boton = document.getElementById(`eliminar${bebida.id}`);
+      boton.addEventListener("click", () => {
+        eliminarDelCarrito(bebida.id);
+      });
+  
+      function eliminarDelCarrito(id) {
+        const producto = carrito.find(bebida => bebida.id === id);
+        const indice = carrito.indexOf(producto);
+        carrito.splice(indice, 1);
+        mostrarCarrito();
+      }
+    });
+  
+    const vaciarCarrito = document.getElementById("vaciar");
+    vaciarCarrito.addEventListener("click", () => {
+      vaciarElCarrito();
+    });
+  
+    function vaciarElCarrito() {
+      carrito = [];
+      mostrarCarrito();
+    }
+  
+    function calcularTotal() {
+      let totalCompra = 0;
+      carrito.forEach(bebida => {
+        totalCompra += bebida.precio * bebida.cantidad;
+      });
+      return totalCompra;
+    }
+    
+    const total = calcularTotal();
+    totalCompra.textContent += total;
+  }
