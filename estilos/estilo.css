@@ -38,24 +38,48 @@ body {
     ul {
         list-style-type: none;
     }
-    .carrusel {
-        display: none;
+    .carrusel img {
+        width: 100%;
+    }
+    .presentacion {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3em;
+        margin-bottom: 4em;
     }
     
     .quienes {
-    background-color: rgb(3, 1, 39);
-    color: white;
-    border-radius: 5px;
+            background-color:  rgb(3, 1, 39);
+            color: white;
+            border-radius: 5px;
+            margin-top: 90px; 
+            text-align: center;
+            font-size: 1em;  
+            }
+    .quienes img {
+        margin-top: 40px;
     }
+
     .donde {
         background-color: rgb(3, 1, 39);
         color: white;
         border-radius: 5px;
+        margin-top: 90px; 
+        text-align: center;
+        font-size: 1em; 
     }
     .conocenos {
         background-color: rgb(6, 3, 53);
         color: white;
         border-radius: 5px;
+        margin-top: 90px; 
+        text-align: center;
+        font-size: 1em; 
+    }
+    .conocenos img {
+        margin-top: 40px;
     }
     .seccionIndex {
     margin-top: 7em;
@@ -207,12 +231,6 @@ h1 {
     font-size: 2em;
     margin-top: 16px;
 }
-.carrusel {
-    display: block;
-    margin-left: 2em;
-    margin-bottom: 5em;
-}
-
 .quienes {
     box-shadow: 1px 1px 1px 1px rgb(16, 16, 107);
     background-color: rgb(1, 1, 17);
@@ -245,6 +263,7 @@ margin-bottom: 10em;
     height: 450px;
     margin-right: 2em;
     margin-left: 2em;
+    margin-top: 0;
 }
 .sectionIndex div{ 
     margin-top: 2em;
