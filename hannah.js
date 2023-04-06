@@ -49,12 +49,13 @@ for(let boton of botonCompra){
 */
 
 class bebida {
-    constructor (id, nombre, precio, img) {
+    constructor (id, nombre, precio, img, button) {
         this.id =id;
         this.nombre =nombre;
         this.precio =precio;
         this.img =img;
-        this.cantidad =1
+        this.cantidad =1;
+
     }
 }
 const arrayBebidas = []
@@ -154,7 +155,14 @@ function mostrarCarrito() {
       div.innerHTML = `
         <p>${bebida.nombre}</p>
         <p>$${bebida.precio}</p>
-        <p>${bebida.cantidad}</p>
+        <p>Cantidad: ${bebida.cantidad} 
+        <button class="agregar" id="agregar${bebida.id}">
+        <img src="../imagenes/logo/agregar.png" alt="agregar">
+        </button>
+        <button class="quitar" id="quitar${bebida.id}">
+        <img src="../imagenes/logo/quitar.png" alt="quitar">
+        </button>
+        </p>
         <button class="botonEliminar" id="eliminar${bebida.id}">Eliminar</button>
       `;
       carritoCompra.appendChild(div);
@@ -170,6 +178,20 @@ function mostrarCarrito() {
         carrito.splice(indice, 1);
         mostrarCarrito();
       }
+      const sumarCantidad= document.querySelector(`#agregar${bebida.id}`);
+      sumarCantidad.addEventListener("click",  () =>{
+       bebida.cantidad++;
+       mostrarCarrito();
+      });
+      const restarCantidad= document.querySelector(`#quitar${bebida.id}`);
+      restarCantidad.addEventListener("click",() =>{
+        if (bebida.cantidad>=2){
+          bebida.cantidad--;
+        }else if (bebida.cantidad=1){
+        eliminarDelCarrito();
+        }
+        mostrarCarrito()
+      })
     });
   
     const vaciarCarrito = document.getElementById("vaciar");
@@ -192,4 +214,7 @@ function mostrarCarrito() {
     
     const total = calcularTotal();
     totalCompra.textContent += total;
-  }
+
+    
+    }
+ 

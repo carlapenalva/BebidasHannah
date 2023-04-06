@@ -177,14 +177,13 @@ body {
     .botonEliminar:hover{
         color: white;
     }
-    .cerrarCarrito, .vaciarCarrito{
+    .cerrarCarrito, .vaciarCarrito, .agregar, .quitar{
         background-color: rgba(10, 9, 17, 0.678);
         margin-bottom: 15px;
         margin-top: 15px;
     }
     .abrirCarrito,
-    .cerrarCarrito, .vaciarCarrito {
-        display: block;
+    .cerrarCarrito, .vaciarCarrito, .agregar, .quitar{
         border: 0;
     }
     .carrito.visible {
