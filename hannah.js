@@ -1,53 +1,3 @@
-//La idea es poder realizar un ecommerce de bebidas como proyecto final. Con lo que aprendimos hasta hoy busque lograr las bases del mismo
-/*let edad = parseInt(prompt ("Ingrese su edad"));
-if (edad<18) {
-    alert ("Sos menor de edad, no podes acceder a esta pagina")
-}
-else if (edad>=18){
-    alert ("Bienvenido a Hannah Bebidas")
-}
-else {
-    alert ("No deciframos tu edad, por favor complete este campo")
-}
-//ARRAYS,CLASES 
-/*function totalFernets(arrayBebidas){
-    let suma = 0
-    for(const bebida of arrayBebidas){
-        if(bebida.nombre === "fernet"){
-            suma = suma + bebida.stock
-        }
-    }
-
-    return suma
-}
-
-function mostrarDatosBebidas(arrayBebidas){
-    for(const bebida of arrayBebidas){
-        bebida.get_datos()
-    }
-}
-
-function mostrarStockBebidas(arrayBebidas){
-    for(const bebida of arrayBebidas){
-        bebida.get_stock()
-    }
-} 
-
-
-
-
-function agregarCarrito(e){
-    console.log("Producto agregado");
-    console.log(e.target);
-}
-
-let botonCompra= document.querySelectorAll(".botonCompra");
-
-for(let boton of botonCompra){
-    boton.addEventListener("click" , agregarCarrito);
-}
-*/
-
 class bebida {
     constructor (id, nombre, precio, img, button) {
         this.id =id;
@@ -120,15 +70,17 @@ function agregarCarrito(id){
       const productos=arrayBebidas.find(bebida=> bebida.id===id);
       carrito.push(productos);
     }
+   
 }
 carrito = [];
 cargarProductos();
-
-
+if (localStorage.getItem("carrito")){
+  carrito=JSON.parse(localStorage.getItem("carrito"));
+}
 abrirCarrito.addEventListener("click", ()=>{
  carritoCompra.classList.add("visible");
+ localStorage.setItem("carrito", JSON.stringify(carrito));
 })
-
 
 function mostrarCarrito() {
     carritoCompra.innerHTML = `
@@ -141,14 +93,15 @@ function mostrarCarrito() {
         <img src="../imagenes/logo/vaciarCompra.png" alt="vaciar">
       </button>
     `;
-    
     const totalCompra = document.querySelector('.totalCompra');
   
     const cerrarCarrito = document.getElementById("cerrar");
     cerrarCarrito.addEventListener("click", () => {
-      carritoCompra.classList.remove("visible");
+    carritoCompra.classList.remove("visible");
+    localStorage.setItem("carrito", JSON.stringify(carrito));
     });
-  
+
+
     carrito.forEach(bebida => {
       const div = document.createElement("div");
       div.classList.add("productoCarrito");
@@ -166,7 +119,7 @@ function mostrarCarrito() {
         <button class="botonEliminar" id="eliminar${bebida.id}">Eliminar</button>
       `;
       carritoCompra.appendChild(div);
-      
+      /*localStorage.setItem("carrito", JSON.stringify(carrito));*/
       const boton = document.getElementById(`eliminar${bebida.id}`);
       boton.addEventListener("click", () => {
         eliminarDelCarrito(bebida.id);
@@ -213,8 +166,6 @@ function mostrarCarrito() {
     }
     
     const total = calcularTotal();
-    totalCompra.textContent += total;
-
-    
+    totalCompra.textContent += total;   
     }
  
