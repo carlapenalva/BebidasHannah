@@ -1,81 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bebidas Hannah</title>
-    <link rel="stylesheet" href="./estilos/estilo.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./estilos/estilo.css" />
+  </head>
+  <body>
     <header>
-            <nav>
-                <ul>
-                    <div class="logo">
-                        <li>
-                            <a href="index.html"><img src="./imagenes/logo/copa.png" alt="logo"> </a>
-                        </li>
-                        <li>
-                            <h1>Bebidas Hannah</h1>
-                        </li>
-                    </div>
-                    <li> 
-                        <a href="secciones/productos.html" class="inicioProducto">Productos</a>
-                    </li>
-                    <li>
-                        <a href="./secciones/mayorista.html" class="mayorista">Mayorista</a>
-                    </li>
-                </ul>
-            </nav>
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="./imagenes/logo/hannahLogo.jpg"
+            alt="logo"
+            style="width: 10em"
+          />
+        </a>
+      </div>
+      <div class="buscando">
+        <input type="text" placeholder="Busca tu bebida" class="buscador" />
+        <button class="botonBuscador">
+          <img src="./imagenes/iconsearch.svg" alt="buscador" />
+        </button>
+      </div>
+      <nav>
+        <a href="./secciones/productos.html">
+          <picture>
+            <source
+              media="(min-width: 575px)"
+              srcset="./imagenes/logo/productHannah.jpg"
+              alt="productos"
+            />
+            <img
+              src="./imagenes/logo/hannahProd.jpg"
+              alt="productos"
+              class="logoProd"
+            />
+          </picture>
+        </a>
+      </nav>
     </header>
-        <hr>
+
+    <hr />
     <section class="carrusel">
-        <img src="./imagenes/bebidas.jpg" alt="tragos">
-    </section>
-    <div class="presentacion">
-        <h2>Por aqui abajo podran conocer un poco más la historia de este hermoso y soñado proyecto</h2>
-        <a href="./secciones/productos.html"><img src="./imagenes/logo/iconoAlcohol.png" alt="alcohol"></a>
-    </div>
-    <section class="sectionIndex">
-        <div class="quienes">
-            <h3>Quienes somos? <br>
-                Franco y Lucas, dos amigos que fueron al colegio juntos toda su vida.    
-                Queriamos dejar de trabajar en lugares que no nos hacian felices, y se nos ocurrio emprender juntos.
-                Sentimos que sabiamos mucho sobre el rubro de la bebida y nos decidimos en comenzar con este proyecto de nuestra
-                propia vinoteca. Hoy luego de dos años, no podemos estar mas felices de nuestra decision. 
-            </h3>
-            <img src="imagenes/empresarios.jpg" alt="dueños">
-        </div>
-        <div class="donde">
-            <img src="imagenes/mardelPlata.jpg" alt="Mar del Plata">
-            <h3>Donde nos encontras? <br>
-                Vivimos y tenemos nuestro local en la hermosa ciudad de Mar del Plata, donde ambos nacimos y crecimos juntos. Pero hacemos envios 
-                mayoristas y minoristas a todas partes del mundo. No duden en contactarse.
-            </h3>
-        </div>
-        <div class="conocenos">
-            <h3>Si sos o te encontras por Mar del Plata, pasa a conocernos. <br>
-                Te esperamos con mucha buena onda, predisposición y musica para pasar un buen rato. Además siempre con muchas
-                ansias de darte un asesoramiento en cualquier tipo de bebida.
-            </h3>
-            <img src="imagenes/local.jpg" alt="Foto local">
-        </div>
+      <img src="./imagenes/bebidas.jpg" alt="tragos" />
     </section>
 
+    <h1 class="titulo">BEBIDAS HANNAH</h1>
+
+    <section class="sectionIndex">
+      <div class="envios">
+        <img src="imagenes/envios.png" alt="envios" />
+        <h2>Envios a todo el pais</h2>
+      </div>
+      <div class="pagos">
+        <img src="imagenes/pago.png" alt="pagos" />
+        <h2>Todos los medios de pago</h2>
+      </div>
+      <div class="horarios">
+        <img src="imagenes/hora.png" alt="horarios" />
+        <h2>Atencion 24 horas</h2>
+      </div>
+    </section>
+    <section class="destacados">
+      <img
+        src="./imagenes/productos/absolutSaborizado.png"
+        alt="absolutSaborizado"
+      />
+      <img src="./imagenes/productos/beefeater.png" alt="beefeater" />
+    </section>
+    <section class="nosotros">
+      <div class="div">
+        <p>
+          Somos Fran y Car, una pareja que en pandemia decidio emprender.
+          Sentiamos que sabiamos sobre el rubro de la bebida y nos decidimos en
+          comenzar con este proyecto de nuestra propia vinoteca. Hoy luego de
+          tres años, no podemos estar mas felices con la decision.
+        </p>
+      </div>
+      <div class="div">
+        <p>
+          Vivimos y tenemos nuestro local en la hermosa ciudad de Mar del Plata,
+          donde ambos nacimos y crecimos juntos. Peeero, hacemos envios
+          mayoristas y minoristas a todas partes del mundo. No duden en
+          contactarse.
+        </p>
+      </div>
+      <div class="div">
+        <p>
+          Si sos de Mar del Plata, o te encontras por aca, pasa a conocernos. Te
+          esperamos con mucha buena onda, predisposición y musica para pasar un
+          buen rato. Además siempre con muchas ansias de darte un asesoramiento
+          en cualquier tipo de bebida.
+        </p>
+      </div>
+    </section>
     <footer>
-       <h4> Encontranos en nuestras redes</h4>
-       <div class="redesSociales">
-            <a href="https://www.facebook.com/">
-                <img src="imagenes/redes/facebook.png" alt="facebook">
-            </a>
-            <a href="https://www.instagram.com/">
-                <img src="imagenes/redes/instagram.png" alt="instagram">
-            </a>
-            <a href="https://www.whatsapp.com/">
-                <img src="imagenes/redes/whatsapp.png" alt="whatsapp">
-            </a>
-       </div>
-       <h5>© Todos los derechos reservados - Penalva Carla</h5>
+      <h4>Encontranos en nuestras redes</h4>
+      <div class="redesSociales">
+        <a href="https://www.facebook.com/">
+          <img src="imagenes/redes/facebook.png" alt="facebook" />
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src="imagenes/redes/instagram.png" alt="instagram" />
+        </a>
+        <a href="https://www.whatsapp.com/">
+          <img src="imagenes/redes/whatsapp.png" alt="whatsapp" />
+        </a>
+      </div>
+      <h5>© Todos los derechos reservados - Penalva Carla</h5>
     </footer>
-</body>
+    <script src="./hannah.js"></script>
+  </body>
 </html>

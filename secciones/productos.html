@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productos | Hannah</title>
-    <link rel="stylesheet" href="../estilos/estilo.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../estilos/estilo.css" />
+  </head>
+  <body>
     <header>
-            <nav>
-                <ul>
-                    <div class="logo">
-                        <li>
-                            <a href="/index.html"><img src="../imagenes/logo/copa.png" alt="logo"></a>
-                        </li>
-                        <li>
-                            <h1>Bebidas Hannah</h1>
-                        </li>
-                    </div>
-                    <li>
-                        <a href="../index.html">Inicio</a>
-                    </li>
-                    <li> 
-                        <a href="mayorista.html" class="mayorista">Mayorista</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    <hr>
+      <div class="logo">
+        <a href="../index.html">
+          <img
+            src="../imagenes/logo/hannahLogo.jpg"
+            alt="logo"
+            style="width: 10em"
+          />
+        </a>
+      </div>
+      <div class="buscando">
+        <input type="text" placeholder="Busca tu bebida" class="buscador" />
+        <button class="botonBuscador">
+          <img src="../imagenes/iconsearch.svg" alt="buscador" />
+        </button>
+      </div>
+      <nav class="encabezado">
+        <nav>
+          <a href="../secciones/productos.html">
+            <img
+              src="../imagenes/logo/productHannah.jpg"
+              alt="productos"
+              style="width: 10em"
+            />
+          </a>
+        </nav>
+      </nav>
+    </header>
+    <hr />
     <section class="carrusel">
-        <img src="../imagenes/bebidas.jpg" alt="tragos">
+      <img src="../imagenes/bebidas.jpg" alt="tragos" />
     </section>
     <div class="hola">
-    <h2>Podes agregar tus productos favoritos al carrito y comprar sin moverte de tu casa!</h2>
-    <button id="abrir" class="abrirCarrito"><img src="../imagenes/logo/carrofavorito.png" alt="carrito"></button>
-    <section class="carrito" id="carrito">
-        <!--<button class="cerrarCarrito" id="cerrar"><img src="../imagenes/logo/cerrarventana.png" alt="cerrar"></button>
-        <h2>Carrito Compras</h2>-->
-    </section>
+      <h1>Compra tus productos favoritos sin moverte de tu casa</h1>
+      <button id="abrir" class="abrirCarrito">
+        <img src="../imagenes/logo/carrofavorito.png" alt="carrito" />
+      </button>
+      <section class="carrito" id="carrito">
+        <button class="cerrarCarrito" id="cerrarVacio">
+          <img src="../imagenes/logo/cerrarventana.png" alt="cerrar" />
+        </button>
+        <h2>Carrito Compras</h2>
+        <p class="parrafoVacio">No se agregaron productos al carrito</p>
+      </section>
     </div>
-
-    <div class="listaProductos" id="listaProductos">
-       
-    </div>
-    
+    <div class="listaProductos" id="listaProductos"></div>
 
     <footer>
-        <h4> Encontranos en nuestras redes</h4>
-        <div class="redesSociales">
-             <a href="https://www.facebook.com/">
-                 <img src="../imagenes/redes/facebook.png" alt="facebook">
-             </a>
-             <a href="https://www.instagram.com/">
-                 <img src="../imagenes/redes/instagram.png" alt="instagram">
-             </a>
-             <a href="https://www.whatsapp.com/">
-                 <img src="../imagenes/redes/whatsapp.png" alt="whatsapp">
-             </a>
-        </div>
-        <h5>© Todos los derechos reservados - Penalva Carla</h5>
-     </footer>
+      <h4>Encontranos en nuestras redes</h4>
+      <div class="redesSociales">
+        <a href="https://www.facebook.com/">
+          <img src="../imagenes/redes/facebook.png" alt="facebook" />
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src="../imagenes/redes/instagram.png" alt="instagram" />
+        </a>
+        <a href="https://www.whatsapp.com/">
+          <img src="../imagenes/redes/whatsapp.png" alt="whatsapp" />
+        </a>
+      </div>
+      <h5>© Todos los derechos reservados - Penalva Carla</h5>
+    </footer>
 
     <script src="../hannah.js"></script>
-    
-</body>
+  </body>
 </html>
