@@ -208,9 +208,9 @@ function mostrarCarrito() {
     restarCantidad.addEventListener("click", () => {
       if (bebida.cantidad >= 2) {
         bebida.cantidad--;
-      } else if ((bebida.cantidad = 1)) {
+      } /*else if ((bebida.cantidad = 1)) {
         eliminarDelCarrito();
-      }
+      }*/
       mostrarCarrito();
     });
   });

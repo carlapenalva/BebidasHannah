@@ -8,8 +8,8 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color: black;
-  color: aliceblue;
+  background-color: #e1dcf8;
+  color: #e1dcf8;
   /*font-family: "Rubik Mono One", sans-serif;*/
   /*font-family: "Montserrat", sans-serif;*/
   font-family: "Raleway", sans-serif;
@@ -21,27 +21,23 @@ body {
     font-weight: normal;
   }
   .titulo {
-    height: 2.5em;
-    background: linear-gradient(
-      90deg,
-      rgba(236, 24, 228, 1) 0%,
-      rgba(103, 9, 121, 1) 35%,
-      rgba(0, 212, 255, 1) 100%
-    );
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2em;
+    color: black;
   }
   header {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 1.5em;
+    background-color: #321d58;
+    padding: 7em;
   }
-  .logoProd {
-    width: 5em;
+  aside {
+    display: flex;
+    flex-direction: column;
   }
   .buscando {
     display: flex;
@@ -54,7 +50,8 @@ body {
     height: 2em;
   }
   .botonBuscador {
-    background-color: black;
+    background-color: #321d58;
+    border: none;
   }
   .botonBuscador img {
     width: 2em;
@@ -62,6 +59,18 @@ body {
 
   .carrusel img {
     width: 100%;
+  }
+  ul,
+  li,
+  a {
+    text-decoration: none;
+  }
+  .nav p {
+    color: #e1dcf8;
+  }
+  .nav img {
+    width: 1em;
+    margin: 0.5em;
   }
   .sectionIndex {
     display: flex;
@@ -103,18 +112,13 @@ body {
     align-items: center;
   }
   .nosotros div {
-    background: linear-gradient(
-      90deg,
-      rgba(236, 24, 228, 1) 0%,
-      rgba(103, 9, 121, 1) 35%,
-      rgba(0, 212, 255, 1) 100%
-    );
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
     height: 20em;
     width: 15em;
     margin: 2em;
     border-radius: 25px;
   }
-  .div,
+  div,
   p {
     display: flex;
     justify-content: center;
@@ -140,8 +144,8 @@ body {
   .producto {
     height: 450px;
     width: 250px;
-    background-color: rgb(1, 1, 17);
-    box-shadow: 0px 0px 10px 0px rgb(16, 16, 107);
+    background-color: #e1dcf8;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
     margin-bottom: 10em;
     border-radius: 20px;
   }
@@ -154,9 +158,9 @@ body {
   .listaProductos button {
     width: 130px;
     padding: 8px;
-    background-color: rgb(0, 0, 32);
+    background-color: #321d58;
     border-radius: 20px;
-    border: 2px solid rgb(16, 16, 107);
+    border: 2px solid #b192f3;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -169,11 +173,17 @@ body {
     align-items: center;
   }
   .abrirCarrito {
-    background-color: black;
+    background-color: none;
   }
   button:hover {
-    background-color: rgb(0, 0, 15);
+    background-color: rgb(185, 164, 224);
   }
+  input {
+    border: 1px solid rgb(185, 164, 224);
+    border-radius: 5px;
+    text-align: center;
+  }
+
   .hola {
     display: flex;
     flex-direction: column;
@@ -182,6 +192,11 @@ body {
     margin-top: 40px;
     margin-bottom: 40px;
   }
+  .hola h2 {
+    font-size: 1em;
+    font-weight: normal;
+  }
+  /*CARRITO*/
   .carrito {
     opacity: 0;
     visibility: hidden;
@@ -189,7 +204,7 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(10, 9, 17, 0.877);
+    background-color: rgba(0, 0, 0, 0.877);
     min-height: 100vh;
     padding: 3rem;
     display: flex;
@@ -236,6 +251,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #321d58;
     margin-top: 10em;
     text-align: center;
     border-top: solid 1px whitesmoke;
@@ -243,6 +259,10 @@ body {
   footer h4 {
     margin-top: 2em;
     margin-bottom: 1em;
+  }
+  footer img {
+    width: 30px;
+    margin: 0.5em;
   }
   .redesSociales {
     margin-bottom: 1em;
@@ -255,9 +275,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
   }
-  .logoProd {
-    width: 10em;
-  }
+
   .destacados img {
     width: 20em;
     margin: 1em;
@@ -281,11 +299,17 @@ body {
 }
 @media (min-width: 900px) {
   .buscador {
-    width: 40em;
+    width: 20em;
     height: 2em;
   }
   .botonBuscador img {
-    width: 3em;
+    width: 2.5em;
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   .sectionIndex {
     display: flex;
@@ -329,7 +353,7 @@ body {
   }
 
   .listaProductos > div:hover {
-    background-color: rgb(0, 0, 32);
+    background-color: #b192f3;
   }
   .listaProductos img {
     width: 300px;
