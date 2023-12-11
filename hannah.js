@@ -110,7 +110,7 @@ function cargarProductos() {
   <h3>$${bebida.precio}</h3>
   <button class="botonCompra" id= "boton${bebida.id}">AGREGAR</button>
   `;
-    listaProductos.append(div);
+    listaProductos.appendChild(div);
 
     const button = div.querySelector(".botonCompra");
     button.addEventListener("click", () => {

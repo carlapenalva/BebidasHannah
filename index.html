@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bebidas Hannah</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./estilos/estilo.css" />
   </head>
   <body>
@@ -40,27 +41,32 @@
 
     <hr />
 
-    <h1 class="titulo">Bebidas Hannah</h1>
+    <h1 class="titulo">BEBIDAS HANNAH</h1>
     <section class="sectionIndex">
-      <div class="envios">
+      <div class="envios" data-aos="zoom-in-down">
         <img src="imagenes/envios.png" alt="envios" />
         <h2>Envios a todo el pais</h2>
       </div>
-      <div class="pagos">
+      <div class="pagos" data-aos="zoom-in-down">
         <img src="imagenes/pago.png" alt="pagos" />
         <h2>Todos los medios de pago</h2>
       </div>
-      <div class="horarios">
+      <div class="horarios" data-aos="zoom-in-down">
         <img src="imagenes/hora.png" alt="horarios" />
         <h2>Atencion 24 horas</h2>
       </div>
     </section>
     <section class="destacados">
       <img
+        data-aos="fade-up"
         src="./imagenes/productos/absolutSaborizado.png"
         alt="absolutSaborizado"
       />
-      <img src="./imagenes/productos/beefeater.png" alt="beefeater" />
+      <img
+        data-aos="fade-up"
+        src="./imagenes/productos/beefeater.png"
+        alt="beefeater"
+      />
     </section>
     <section class="nosotros">
       <div class="div">
@@ -107,5 +113,9 @@
       <h5>© Todos los derechos reservados - Penalva Carla</h5>
     </footer>
     <script src="./hannah.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

@@ -16,15 +16,21 @@ body {
 }
 
 @media (min-width: 150px) {
+  .logo img {
+    width: 250px;
+  }
   h1 {
     font-size: 1em;
-    font-weight: normal;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 1.5px #321d58;
+    letter-spacing: 4px;
   }
   .titulo {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    margin: 2em;
   }
   header {
     display: flex;
@@ -270,10 +276,8 @@ body {
 }
 
 @media (min-width: 575px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  .logo img {
+    width: 500px;
   }
 
   .destacados img {
@@ -298,6 +302,11 @@ body {
   }
 }
 @media (min-width: 900px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
   .buscador {
     width: 20em;
     height: 2em;
