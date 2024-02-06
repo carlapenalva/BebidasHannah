@@ -1,4 +1,4 @@
-class bebida {
+class Bebida {
   constructor(id, nombre, precio, img, button) {
     this.id = id;
     this.nombre = nombre;
@@ -9,7 +9,7 @@ class bebida {
 }
 const arrayBebidas = [];
 arrayBebidas.push(
-  new bebida(
+  new Bebida(
     1,
     "Fernet branca 450",
     1300,
@@ -17,7 +17,7 @@ arrayBebidas.push(
   )
 );
 arrayBebidas.push(
-  new bebida(
+  new Bebida(
     2,
     "Fernet branca 750",
     1600,
@@ -25,7 +25,7 @@ arrayBebidas.push(
   )
 );
 arrayBebidas.push(
-  new bebida(
+  new Bebida(
     3,
     "Fernet branca 1LT",
     1900,
@@ -33,13 +33,13 @@ arrayBebidas.push(
   )
 );
 arrayBebidas.push(
-  new bebida(4, "Fernet 1882", 1500, "../imagenes/productos/fernet1882.png")
+  new Bebida(4, "Fernet 1882", 1500, "../imagenes/productos/fernet1882.png")
 );
 arrayBebidas.push(
-  new bebida(5, "Vodka Absolut", 2600, "../imagenes/productos/absolut.png")
+  new Bebida(5, "Vodka Absolut", 2600, "../imagenes/productos/absolut.png")
 );
 arrayBebidas.push(
-  new bebida(
+  new Bebida(
     6,
     "Absolut saborizado",
     2900,
@@ -47,7 +47,7 @@ arrayBebidas.push(
   )
 );
 arrayBebidas.push(
-  new bebida(
+  new Bebida(
     7,
     "Vodka Smirnoff",
     1900,
@@ -55,7 +55,7 @@ arrayBebidas.push(
   )
 );
 arrayBebidas.push(
-  new bebida(
+  new Bebida(
     8,
     "Smirnoff saborizado",
     2100,
@@ -63,31 +63,31 @@ arrayBebidas.push(
   )
 );
 arrayBebidas.push(
-  new bebida(9, "Gin Heraclito", 2300, "../imagenes/productos/ginHeraclito.png")
+  new Bebida(9, "Gin Heraclito", 2300, "../imagenes/productos/ginHeraclito.png")
 );
 arrayBebidas.push(
-  new bebida(10, "Gin Gordon's", 2000, "../imagenes/productos/gordond.png")
+  new Bebida(10, "Gin Gordon's", 2000, "../imagenes/productos/gordond.png")
 );
 arrayBebidas.push(
-  new bebida(11, "Gin Beefeater", 3100, "../imagenes/productos/beefeater.png")
+  new Bebida(11, "Gin Beefeater", 3100, "../imagenes/productos/beefeater.png")
 );
 arrayBebidas.push(
-  new bebida(12, "Campari", 1700, "../imagenes/productos/campari.png")
+  new Bebida(12, "Campari", 1700, "../imagenes/productos/campari.png")
 );
 arrayBebidas.push(
-  new bebida(13, "Ron Bacardi", 2400, "../imagenes/productos/ronBacardi.png")
+  new Bebida(13, "Ron Bacardi", 2400, "../imagenes/productos/ronBacardi.png")
 );
 arrayBebidas.push(
-  new bebida(14, "Havana Club", 1700, "../imagenes/productos/havanaClub")
+  new Bebida(14, "Havana Club", 1700, "../imagenes/productos/havanaClub")
 );
 arrayBebidas.push(
-  new bebida(15, "Malibu", 2100, "../imagenes/productos/malibu.png")
+  new Bebida(15, "Malibu", 2100, "../imagenes/productos/malibu.png")
 );
 arrayBebidas.push(
-  new bebida(16, "Red Label", 2800, "../imagenes/productos/redLabel.png")
+  new Bebida(16, "Red Label", 2800, "../imagenes/productos/redLabel.png")
 );
 arrayBebidas.push(
-  new bebida(
+  new Bebida(
     17,
     "Blenders Pride",
     5400,
@@ -95,7 +95,7 @@ arrayBebidas.push(
   )
 );
 arrayBebidas.push(
-  new bebida(18, "Chivas", 6700, "../imagenes/productos/chivas.png")
+  new Bebida(18, "Chivas", 6700, "../imagenes/productos/chivas.png")
 );
 
 const listaProductos = document.getElementById("listaProductos");
@@ -105,23 +105,23 @@ function cargarProductos() {
     const div = document.createElement("div");
     div.classList.add("producto");
     div.innerHTML = `
-  <img src="${bebida.img}" alt="${bebida.nombre}">
-  <h2>${bebida.nombre}</h2>
-  <h3>$${bebida.precio}</h3>
-  <button class="botonCompra" id= "boton${bebida.id}">AGREGAR</button>
-  `;
+      <img src="${bebida.img}" alt="${bebida.nombre}">
+      <h2>${bebida.nombre}</h2>
+      <h3>$${bebida.precio}</h3>
+      <button class="botonCompra" id= "boton${bebida.id}">AGREGAR</button>
+      `;
     listaProductos.appendChild(div);
 
     const button = div.querySelector(".botonCompra");
     button.addEventListener("click", () => {
       agregarCarrito(bebida.id);
-      mostrarCarrito();
+      /*mostrarCarrito();*/
     });
   });
 }
-const carritoCompra = document.getElementById("carrito");
-const abrirCarrito = document.getElementById("abrir");
-const cerrarVacio = document.getElementById("cerrarVacio");
+cargarProductos();
+
+let carrito = [];
 
 function agregarCarrito(id) {
   let productoExistente = false;
@@ -132,44 +132,19 @@ function agregarCarrito(id) {
       break;
     }
   }
-
   if (!productoExistente) {
-    const productos = arrayBebidas.find((bebida) => bebida.id === id);
-    carrito.push(productos);
+    const producto = arrayBebidas.find((bebida) => bebida.id === id);
+    carrito.push(producto);
   }
-}
-carrito = [];
-cargarProductos();
-if (localStorage.getItem("carrito")) {
-  carrito = JSON.parse(localStorage.getItem("carrito"));
-}
-abrirCarrito.addEventListener("click", () => {
-  carritoCompra.classList.add("visible");
   localStorage.setItem("carrito", JSON.stringify(carrito));
-  cerrarVacio.addEventListener("click", () => {
-    carritoCompra.classList.remove("visible");
-  });
-});
+}
 
+console.log(carrito);
+/*if (localStorage.getItem("carrito")) {
+  carrito = JSON.parse(localStorage.getItem("carrito"));
+}*/
+/*const carritoCompra = document.getElementById("carrito");
 function mostrarCarrito() {
-  carritoCompra.innerHTML = `
-    <button class="cerrarCarrito" id="cerrar">
-      <img src="../imagenes/logo/cerrarventana.png" alt="cerrar">
-    </button> 
-    <h2>Carrito Compras</h2>
-    <p class="totalCompra">Total compras: $</p> 
-    <button class="vaciarCarrito" id="vaciar">
-      <img src="../imagenes/logo/vaciarCompra.png" alt="vaciar">
-    </button>
-  `;
-  const totalCompra = document.querySelector(".totalCompra");
-
-  const cerrarCarrito = document.getElementById("cerrar");
-  cerrarCarrito.addEventListener("click", () => {
-    carritoCompra.classList.remove("visible");
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  });
-
   carrito.forEach((bebida) => {
     const div = document.createElement("div");
     div.classList.add("productoCarrito");
@@ -187,52 +162,52 @@ function mostrarCarrito() {
       <button class="botonEliminar" id="eliminar${bebida.id}">Eliminar</button>
     `;
     carritoCompra.appendChild(div);
-    /*localStorage.setItem("carrito", JSON.stringify(carrito));*/
+    /*
     const boton = document.getElementById(`eliminar${bebida.id}`);
     boton.addEventListener("click", () => {
       eliminarDelCarrito(bebida.id);
     });
-
-    function eliminarDelCarrito(id) {
-      const producto = carrito.find((bebida) => bebida.id === id);
-      const indice = carrito.indexOf(producto);
-      carrito.splice(indice, 1);
-      mostrarCarrito();
-    }
-    const sumarCantidad = document.querySelector(`#agregar${bebida.id}`);
-    sumarCantidad.addEventListener("click", () => {
-      bebida.cantidad++;
-      mostrarCarrito();
-    });
-    const restarCantidad = document.querySelector(`#quitar${bebida.id}`);
-    restarCantidad.addEventListener("click", () => {
-      if (bebida.cantidad >= 2) {
-        bebida.cantidad--;
-      } /*else if ((bebida.cantidad = 1)) {
-        eliminarDelCarrito();
-      }*/
-      mostrarCarrito();
-    });
   });
-
-  const vaciarCarrito = document.getElementById("vaciar");
-  vaciarCarrito.addEventListener("click", () => {
-    vaciarElCarrito();
-  });
-
-  function vaciarElCarrito() {
-    carrito = [];
-    mostrarCarrito();
-  }
-
-  function calcularTotal() {
-    let totalCompra = 0;
-    carrito.forEach((bebida) => {
-      totalCompra += bebida.precio * bebida.cantidad;
-    });
-    return totalCompra;
-  }
-
-  const total = calcularTotal();
-  totalCompra.textContent += total;
 }
+function eliminarDelCarrito(id) {
+  const producto = carrito.find((bebida) => bebida.id === id);
+  const indice = carrito.indexOf(producto);
+  carrito.splice(indice, 1);
+  mostrarCarrito();
+}
+const sumarCantidad = document.querySelector(`#agregar${bebida.id}`);
+sumarCantidad.addEventListener("click", () => {
+  bebida.cantidad++;
+  mostrarCarrito();
+});
+const restarCantidad = document.querySelector(`#quitar${bebida.id}`);
+restarCantidad.addEventListener("click", () => {
+  if (bebida.cantidad >= 2) {
+    bebida.cantidad--;
+  } /*else if ((bebida.cantidad = 1)) {
+        eliminarDelCarrito();
+      }
+  mostrarCarrito();
+});
+
+const vaciarCarrito = document.getElementById("vaciar");
+vaciarCarrito.addEventListener("click", () => {
+  vaciarElCarrito();
+});
+
+function vaciarElCarrito() {
+  carrito = [];
+  mostrarCarrito();
+}
+
+function calcularTotal() {
+  let totalCompra = 0;
+  carrito.forEach((bebida) => {
+    totalCompra += bebida.precio * bebida.cantidad;
+  });
+  return totalCompra;
+}
+
+const total = calcularTotal();
+totalCompra.textContent += total;
+*/

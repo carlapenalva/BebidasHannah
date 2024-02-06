@@ -8,29 +8,16 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #e1dcf8;
-  color: #e1dcf8;
+  background-color:/* #eeeef1*/ #e3e3e7;
   /*font-family: "Rubik Mono One", sans-serif;*/
   /*font-family: "Montserrat", sans-serif;*/
   font-family: "Raleway", sans-serif;
 }
 
 @media (min-width: 150px) {
+  /*HEADER*/
   .logo img {
     width: 250px;
-  }
-  h1 {
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    -webkit-text-stroke: 1.5px #321d58;
-    letter-spacing: 4px;
-  }
-  .titulo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2em;
   }
   header {
     display: flex;
@@ -62,10 +49,6 @@ body {
   .botonBuscador img {
     width: 2em;
   }
-
-  .carrusel img {
-    width: 100%;
-  }
   ul,
   li,
   a {
@@ -77,6 +60,18 @@ body {
   .nav img {
     width: 1em;
     margin: 0.5em;
+  }
+  h1 {
+    font-size: 1.2em;
+    color: #171717;
+
+    /*letter-spacing: 4px;*/
+  }
+  .titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
   }
   .sectionIndex {
     display: flex;
@@ -116,6 +111,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #e5e5e5;
   }
   .nosotros div {
     box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
@@ -150,8 +146,8 @@ body {
   .producto {
     height: 450px;
     width: 250px;
-    background-color: #e1dcf8;
-    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+    background-color: #e5e5e5;
+    box-shadow: 0px 1px 10px 0px rgb(0, 0, 0);
     margin-bottom: 10em;
     border-radius: 20px;
   }
@@ -164,7 +160,7 @@ body {
   .listaProductos button {
     width: 130px;
     padding: 8px;
-    background-color: #321d58;
+    background-color: #171717;
     border-radius: 20px;
     border: 2px solid #b192f3;
     align-items: center;
@@ -203,24 +199,18 @@ body {
     font-weight: normal;
   }
   /*CARRITO*/
-  .carrito {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.877);
-    min-height: 100vh;
-    padding: 3rem;
+
+  .sectionCarritoVacio {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
   }
-  .carrito h2 {
-    margin-bottom: 10px;
+  .sectionCarritoVacio h2 {
+    font-size: medium;
+    margin-top: 0.5em;
   }
+
   .botonEliminar {
     background-color: rgb(171, 171, 231);
     margin-bottom: 10px;
@@ -230,48 +220,39 @@ body {
   .botonEliminar:hover {
     color: white;
   }
-  .cerrarCarrito,
-  .vaciarCarrito,
-  .agregar,
-  .quitar {
-    background-color: rgba(10, 9, 17, 0.678);
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
-  .abrirCarrito,
-  .cerrarCarrito,
-  .vaciarCarrito,
-  .agregar,
-  .quitar {
-    border: 0;
-  }
-  .carrito.visible {
-    opacity: 1;
-    visibility: visible;
-  }
+
   .parrafoVacio {
     margin-top: 2rem;
   }
+
+  /*FOOTER*/
+
   footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #321d58;
+    background-color: #171717;
     margin-top: 10em;
     text-align: center;
     border-top: solid 1px whitesmoke;
+    color: #e1dcf8;
   }
   footer h4 {
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
   }
+
+  footer h5 {
+    margin-bottom: 3em;
+  }
+
   footer img {
     width: 30px;
     margin: 0.5em;
   }
   .redesSociales {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
 }
 
@@ -339,12 +320,9 @@ body {
     align-items: center;
   }
 }
+
 @media (min-width: 1200px) {
-  .carrusel img {
-    height: 34em;
-  }
   h1 {
-    font-size: 2em;
     margin-top: 16px;
     display: flex;
     justify-content: center;
@@ -369,5 +347,12 @@ body {
     height: 300px;
     margin-bottom: 18px;
     border-radius: 20px 20px 0 0;
+  }
+  .sectionCarritoVacio {
+    background-color: #eeeef1;
+    padding: 10em;
+    margin: 10em;
+    border: 1px solid #e3e3e7;
+    border-radius: 0.5em;
   }
 }
