@@ -61,11 +61,10 @@ body {
     width: 1em;
     margin: 0.5em;
   }
+  /*INDEX*/
   h1 {
     font-size: 1.2em;
     color: #171717;
-
-    /*letter-spacing: 4px;*/
   }
   .titulo {
     display: flex;
@@ -200,15 +199,23 @@ body {
   }
   /*CARRITO*/
 
-  .sectionCarritoVacio {
+  .carritoVacio {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .sectionCarritoVacio h2 {
-    font-size: medium;
-    margin-top: 0.5em;
+  .carritoVacio img {
+    margin-bottom: 2em;
+    margin-top: 5em;
+  }
+  .carritoVacio h1 {
+    font-size: small;
+  }
+  .carritoVacio h2 {
+    font-size: small;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
   }
 
   .botonEliminar {
@@ -232,24 +239,28 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #171717;
+    background-color: #e1dcf8;
+    /* background-color: #171717;*/
     margin-top: 10em;
     text-align: center;
-    border-top: solid 1px whitesmoke;
-    color: #e1dcf8;
+    border-top: solid 1px /*whitesmoke;*/ #b3b3b3;
+    color: /*#e1dcf8;*/ #171717;
   }
   footer h4 {
-    margin-top: 3em;
+    font-size: small;
+    margin-top: 1.5em;
     margin-bottom: 1.5em;
   }
 
   footer h5 {
-    margin-bottom: 3em;
+    font-size: small;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
   }
 
   footer img {
-    width: 30px;
-    margin: 0.5em;
+    width: 1.5em;
+    padding: 0.5em;
   }
   .redesSociales {
     margin-bottom: 1.5em;
@@ -280,6 +291,25 @@ body {
     margin: 0 auto;
     justify-items: center;
     align-items: center;
+  }
+  .carritoVacio img {
+    margin-top: 0px;
+  }
+  .carritoVacio h1 {
+    font-size: 1.2em;
+    margin-top: 0px;
+  }
+  .carritoVacio h2 {
+    font-size: medium;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+  }
+  .sectionCarritoVacio {
+    background-color: #eeeef1;
+    padding: 5em;
+    margin: 2em;
+    border: 1px solid #e3e3e7;
+    border-radius: 0.5em;
   }
 }
 @media (min-width: 900px) {
@@ -314,6 +344,16 @@ body {
     justify-content: center;
   }
   .nosotros {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .sectionCarritoVacio {
+    padding: 7em;
+    margin: 5em;
+  }
+  footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -354,5 +394,9 @@ body {
     margin: 10em;
     border: 1px solid #e3e3e7;
     border-radius: 0.5em;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
