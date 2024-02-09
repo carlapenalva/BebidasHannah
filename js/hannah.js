@@ -139,11 +139,7 @@ function agregarCarrito(id) {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-console.log(carrito);
-/*if (localStorage.getItem("carrito")) {
-  carrito = JSON.parse(localStorage.getItem("carrito"));
-}*/
-/*const carritoCompra = document.getElementById("carrito");
+/*
 function mostrarCarrito() {
   carrito.forEach((bebida) => {
     const div = document.createElement("div");

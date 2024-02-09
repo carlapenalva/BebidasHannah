@@ -8,7 +8,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color:/* #eeeef1*/ #e3e3e7;
+  background-color: #e3e3e7;
   /*font-family: "Rubik Mono One", sans-serif;*/
   /*font-family: "Montserrat", sans-serif;*/
   font-family: "Raleway", sans-serif;
@@ -216,6 +216,9 @@ body {
     font-size: small;
     margin-top: 1.5em;
     margin-bottom: 2em;
+  }
+  .disabled {
+    display: none;
   }
 
   .botonEliminar {
