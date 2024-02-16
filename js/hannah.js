@@ -115,13 +115,18 @@ function cargarProductos() {
     const button = div.querySelector(".botonCompra");
     button.addEventListener("click", () => {
       agregarCarrito(bebida.id);
-      /*mostrarCarrito();*/
     });
   });
 }
 cargarProductos();
-
 let carrito = [];
+let productosEnCarrito;
+const productosEnCarritoLS = JSON.parse(localStorage.getItem("carrito"));
+if (productosEnCarritoLS) {
+  carrito = productosEnCarritoLS;
+} else {
+  carrito = [];
+}
 
 function agregarCarrito(id) {
   let productoExistente = false;
