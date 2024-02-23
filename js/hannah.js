@@ -120,7 +120,7 @@ function cargarProductos() {
 }
 cargarProductos();
 let carrito = [];
-let productosEnCarrito;
+/*let productosEnCarrito;*/
 const productosEnCarritoLS = JSON.parse(localStorage.getItem("carrito"));
 if (productosEnCarritoLS) {
   carrito = productosEnCarritoLS;

@@ -259,13 +259,12 @@ body {
     width: 4em;
   }
   .productoCarrito {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: white;
-    width: 10em;
-    padding-left: 2em;
+    font-size: small;
+    width: 100vw;
+    /*padding-left: 2em;*/
   }
   .agregar,
   .quitar {
@@ -351,6 +350,15 @@ body {
     border: 1px solid #e3e3e7;
     border-radius: 0.5em;
   }
+  .productoCarrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    width: 30em;
+    padding-right: 2em;
+  }
 }
 @media (min-width: 900px) {
   header {
@@ -390,8 +398,26 @@ body {
     align-items: center;
   }
   .sectionCarrito {
-    padding: 7em;
-    margin: 5em;
+    padding: 1em;
+    margin: 3em 1.5em 3em 3em;
+  }
+
+  .resumenCompra {
+    background-color: #eeeef1;
+    border: 1px solid #e3e3e7;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 3em 3em 3em 1.5em;
+    height: 10em;
+  }
+  .carritoCompras {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+  }
+  .productoCarrito {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 30em;
   }
   footer {
     display: flex;
@@ -434,9 +460,14 @@ body {
   }
 
   .sectionCarrito {
-    background-color: #eeeef1;
     padding: 1em;
     margin: 5em 2em 5em 5em;
+  }
+
+  .resumenCompra {
+    padding: 1em;
+    margin: 5em 5em 5em 2em;
+    height: 10em;
   }
   .carritoVacio img {
     margin-top: 2em;
@@ -451,13 +482,14 @@ body {
     background-color: #b192f3;
   }
   .productoCarrito {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: white;
-    width: 40em;
+    width: 50em;
     margin-left: 2em;
+  }
+  .productoCarrito p {
+    margin: 0em 2em 0em 2em;
   }
 
   .resumenCompra {
