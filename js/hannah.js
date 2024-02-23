@@ -145,52 +145,6 @@ function agregarCarrito(id) {
 }
 
 /*
-function mostrarCarrito() {
-  carrito.forEach((bebida) => {
-    const div = document.createElement("div");
-    div.classList.add("productoCarrito");
-    div.innerHTML = `
-      <p>${bebida.nombre}</p>
-      <p>$${bebida.precio}</p>
-      <p>Cantidad: ${bebida.cantidad} 
-      <button class="agregar" id="agregar${bebida.id}">
-      <img src="../imagenes/logo/agregar.png" alt="agregar">
-      </button>
-      <button class="quitar" id="quitar${bebida.id}">
-      <img src="../imagenes/logo/quitar.png" alt="quitar">
-      </button>
-      </p>
-      <button class="botonEliminar" id="eliminar${bebida.id}">Eliminar</button>
-    `;
-    carritoCompra.appendChild(div);
-    /*
-    const boton = document.getElementById(`eliminar${bebida.id}`);
-    boton.addEventListener("click", () => {
-      eliminarDelCarrito(bebida.id);
-    });
-  });
-}
-function eliminarDelCarrito(id) {
-  const producto = carrito.find((bebida) => bebida.id === id);
-  const indice = carrito.indexOf(producto);
-  carrito.splice(indice, 1);
-  mostrarCarrito();
-}
-const sumarCantidad = document.querySelector(`#agregar${bebida.id}`);
-sumarCantidad.addEventListener("click", () => {
-  bebida.cantidad++;
-  mostrarCarrito();
-});
-const restarCantidad = document.querySelector(`#quitar${bebida.id}`);
-restarCantidad.addEventListener("click", () => {
-  if (bebida.cantidad >= 2) {
-    bebida.cantidad--;
-  } /*else if ((bebida.cantidad = 1)) {
-        eliminarDelCarrito();
-      }
-  mostrarCarrito();
-});
-
 const vaciarCarrito = document.getElementById("vaciar");
 vaciarCarrito.addEventListener("click", () => {
   vaciarElCarrito();

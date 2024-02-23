@@ -351,12 +351,9 @@ body {
     border-radius: 0.5em;
   }
   .productoCarrito {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: white;
-    width: 30em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 35em;
     padding-right: 2em;
   }
 }
@@ -414,11 +411,7 @@ body {
     display: grid;
     grid-template-columns: 4fr 2fr;
   }
-  .productoCarrito {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    width: 30em;
-  }
+
   footer {
     display: flex;
     flex-direction: row;
