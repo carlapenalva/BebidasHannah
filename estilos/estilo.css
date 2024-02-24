@@ -205,6 +205,7 @@ body {
     justify-content: center;
     align-items: center;
   }
+
   .carritoVacio img {
     margin-bottom: 2em;
     margin-top: 5em;
@@ -223,9 +224,6 @@ body {
     border-radius: 4px;
     padding: 1em;
   }
-  .disabled {
-    display: none;
-  }
   .resumenVacio {
     display: flex;
     flex-direction: column;
@@ -237,6 +235,23 @@ body {
   h3 {
     margin-bottom: 1em;
     font-weight: lighter;
+  }
+  .totalCompra {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: small;
+  }
+  .totalCompra h2,
+  h3 {
+    font-weight: lighter;
+  }
+  .totalCompra button {
+    width: 100%;
+  }
+  .disabled {
+    display: none;
   }
 
   .botonEliminar {

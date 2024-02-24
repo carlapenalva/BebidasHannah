@@ -55,21 +55,26 @@
             <button style="width: 20em">Agregar productos</button>
           </a>
         </div>
-        <div class="listaCarrito disable" id="contenedorCarritoProductos"></div>
+        <div
+          class="listaCarrito disabled"
+          id="contenedorCarritoProductos"
+        ></div>
       </section>
       <section class="resumenCompra">
-        <div class="resumenVacio">
+        <div class="resumenVacio" id="resumenVacio">
           <h2>
             Resumen de compra
             <hr />
           </h2>
-          <h3>
+          <h3 class="resumenVacio">
             Aquí verás los importes de tu compra una vez que agregues productos.
           </h3>
         </div>
+        <div>
+          <div class="totalCompra disabled" id="totalCompra"></div>
+        </div>
       </section>
     </main>
-
     <footer>
       <h4>Encontranos en nuestras redes</h4>
       <div class="redesSociales">

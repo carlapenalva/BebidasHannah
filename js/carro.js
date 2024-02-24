@@ -1,7 +1,5 @@
 const productosEnCarrito = JSON.parse(localStorage.getItem("carrito"));
 
-/*document.addEventListener("DOMContentLoaded", function mostrarCarrito() {*/
-/*const productosEnCarrito = JSON.parse(localStorage.getItem("carrito"));*/
 function mostrarCarrito() {
   let productosEnCarrito = JSON.parse(localStorage.getItem("carrito"));
   console.log(productosEnCarrito);
@@ -12,7 +10,7 @@ function mostrarCarrito() {
 
   if (productosEnCarrito) {
     contenedorCarritoVacio.classList.add("disabled");
-    contenedorCarritoProductos.classList.remove("disable");
+    contenedorCarritoProductos.classList.remove("disabled");
     contenedorCarritoProductos.innerHTML = "";
     productosEnCarrito.forEach((producto) => {
       const div = document.createElement("div");
@@ -49,29 +47,55 @@ function mostrarCarrito() {
         if (producto.cantidad >= 2) {
           producto.cantidad--;
         } else if ((producto.cantidad = 1)) {
-          eliminarDelCarrito();
+          eliminarDelCarrito(producto.id, productosEnCarrito);
         }
         localStorage.setItem("carrito", JSON.stringify(productosEnCarrito));
         mostrarCarrito();
       });
-
-      /*const vaciarCarrito = document.getElementById("vaciar");
-vaciarCarrito.addEventListener("click", () => {
-  vaciarElCarrito();
-});
-
-function vaciarElCarrito() {
-  carrito = [];
-  mostrarCarrito();
-} CUANDO VACIE EL CARRITO LO QUE TENGO QUE HACER ES VOLVER A HACER QUE SE MUESTRE EL EMPIEZA TU CARRITO DE COMPRAS CONTENEDOR CARRITO VACIO REMOVE DISABLE*/
+    });
+  } else {
+    contenedorCarritoVacio.classList.remove("disabled");
+    contenedorCarritoProductos.classList.add("disabled");
+  }
+  const resumenVacio = document.getElementById("resumenVacio");
+  const totalCompra = document.getElementById("totalCompra");
+  let total = 0;
+  if (productosEnCarrito) {
+    productosEnCarrito.forEach((producto) => {
+      total += producto.precio * producto.cantidad;
     });
   }
+  totalCompra.innerHTML = `<h2>Resumen compra</h2> <hr/> <h3> Total: $${total}</h3> <button id="vaciarCarrito">Vaciar Carrito</button>`;
+  if (productosEnCarrito && productosEnCarrito.length > 0) {
+    resumenVacio.classList.remove("visible");
+    resumenVacio.classList.add("disabled");
+    totalCompra.classList.remove("disabled");
+  } else {
+    resumenVacio.classList.remove("disabled");
+    resumenVacio.classList.add("visible");
+    totalCompra.classList.add("disabled");
+  }
+
+  const vaciarCarritoBtn = document.getElementById("vaciarCarrito");
+  vaciarCarritoBtn.addEventListener("click", () => {
+    vaciarCarrito();
+  });
+}
+function vaciarCarrito() {
+  localStorage.removeItem("carrito");
+  contenedorCarritoProductos.innerHTML = "";
+  mostrarCarrito();
 }
 function eliminarDelCarrito(id, productosEnCarrito) {
   const bebida = productosEnCarrito.find((producto) => producto.id === id);
   const indice = productosEnCarrito.indexOf(bebida);
   productosEnCarrito.splice(indice, 1);
   localStorage.setItem("carrito", JSON.stringify(productosEnCarrito));
+  if (productosEnCarrito.length === 0) {
+    vaciarCarrito();
+  } else {
+    localStorage.setItem("carrito", JSON.stringify(productosEnCarrito));
+  }
   mostrarCarrito();
 }
 mostrarCarrito();

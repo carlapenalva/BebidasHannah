@@ -119,8 +119,7 @@ function cargarProductos() {
   });
 }
 cargarProductos();
-let carrito = [];
-/*let productosEnCarrito;*/
+let carrito;
 const productosEnCarritoLS = JSON.parse(localStorage.getItem("carrito"));
 if (productosEnCarritoLS) {
   carrito = productosEnCarritoLS;
@@ -143,26 +142,3 @@ function agregarCarrito(id) {
   }
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-
-/*
-const vaciarCarrito = document.getElementById("vaciar");
-vaciarCarrito.addEventListener("click", () => {
-  vaciarElCarrito();
-});
-
-function vaciarElCarrito() {
-  carrito = [];
-  mostrarCarrito();
-}
-
-function calcularTotal() {
-  let totalCompra = 0;
-  carrito.forEach((bebida) => {
-    totalCompra += bebida.precio * bebida.cantidad;
-  });
-  return totalCompra;
-}
-
-const total = calcularTotal();
-totalCompra.textContent += total;
-*/
