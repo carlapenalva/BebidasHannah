@@ -118,6 +118,7 @@ function cargarProductos() {
     });
   });
 }
+
 cargarProductos();
 let carrito;
 const productosEnCarritoLS = JSON.parse(localStorage.getItem("carrito"));
@@ -142,3 +143,26 @@ function agregarCarrito(id) {
   }
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
+
+let buscador = document.getElementById("buscador");
+
+buscador.addEventListener("input", (event) => {
+  listaProductos.innerHTML = "";
+  const textoBusqueda = event.target.value.toLowerCase();
+  const productosFiltrados = arrayBebidas.filter((bebida) => {
+    // Convertir el nombre de la bebida a minúsculas y verificar si incluye el texto de búsqueda
+    return bebida.nombre.toLowerCase().includes(textoBusqueda);
+  });
+  // Iterar sobre los productos filtrados y agregarlos a la lista
+  productosFiltrados.forEach((bebida) => {
+    const div = document.createElement("div");
+    div.classList.add("producto");
+    div.innerHTML = `
+      <img src="${bebida.img}" alt="${bebida.nombre}">
+      <h2>${bebida.nombre}</h2>
+      <h3>$${bebida.precio}</h3>
+      <button class="botonCompra" id="boton${bebida.id}">AGREGAR</button>
+    `;
+    listaProductos.appendChild(div);
+  });
+});
