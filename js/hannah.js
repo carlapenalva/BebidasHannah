@@ -106,6 +106,7 @@ function cargarProductos() {
     div.classList.add("producto");
     div.innerHTML = `
       <img src="${bebida.img}" alt="${bebida.nombre}">
+      <hr/>
       <h2>${bebida.nombre}</h2>
       <h3>$${bebida.precio}</h3>
       <button class="botonCompra" id= "boton${bebida.id}">AGREGAR</button>

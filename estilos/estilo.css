@@ -145,10 +145,14 @@ body {
   .producto {
     height: 450px;
     width: 250px;
-    background-color: #e5e5e5;
+    background-color: #ffffff;
     box-shadow: 0px 1px 10px 0px rgb(0, 0, 0);
     margin-bottom: 10em;
     border-radius: 20px;
+  }
+  .producto hr {
+    color: #321d58;
+    width: 100%;
   }
   .producto h2 {
     margin-bottom: 0.5em;
@@ -293,8 +297,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #e1dcf8;
-
+    background-color: #eeeef1;
     margin-top: 10em;
     text-align: center;
     border-top: solid 1px #b3b3b3;
@@ -302,22 +305,24 @@ body {
   }
   footer h4 {
     font-size: small;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    margin-left: 1.5em;
   }
 
   footer h5 {
     font-size: small;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
+    font-weight: 100;
+  }
+  footer h6 {
+    margin-bottom: 2.5em;
+    margin-left: 1.5em;
   }
 
   footer img {
-    width: 1.5em;
-    padding: 0.5em;
-  }
-  .redesSociales {
-    margin-bottom: 1.5em;
+    width: 1em;
+    /*padding: 0.3em;*/
+    /*  margin-top: 0.3em;*/
   }
 }
 
@@ -428,10 +433,8 @@ body {
   }
 
   footer {
-    display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: start;
   }
 }
 
@@ -453,9 +456,12 @@ body {
     border-radius: 20px;
   }
 
-  .listaProductos > div:hover {
-    background-color: #a989ec;
+  .listaProductos > .producto:hover {
+    color: #4d3774;
   }
+  /*.producto > h3:hover {
+    color: #a989ec;
+  }*/
   .listaProductos img {
     width: 300px;
     height: 300px;
@@ -491,7 +497,7 @@ body {
   }
   .productoCarrito {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: white;
     width: 50em;
     margin-left: 2em;
@@ -508,8 +514,8 @@ body {
     margin: 5em 5em 5em 2em;
     height: 10em;
   }
-  footer {
+  /*footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-  }
+  }*/
 }
