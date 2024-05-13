@@ -17,20 +17,22 @@ function mostrarCarrito() {
       div.classList.add("productoCarrito");
       div.innerHTML = `
       <div>
-      <img src="${producto.img}" class="imgCarrito">
+        <img src="${producto.img}" class="imgCarrito">
       </div>
-      <p>${producto.nombre}</p>
-      <p>$${producto.precio}</p>
-      <p>Cantidad: ${producto.cantidad} </p>
-      <div>
-      <button class="agregar" id="agregar${producto.id}">
-      <img src="../imagenes/carrito/agregar.png" alt="agregar">
-      </button>
-      <button class="quitar" id="quitar${producto.id}">
-      <img src="../imagenes/carrito/quitar.png" alt="quitar" >
-      </button>
+      <div class="infProducto">
+        <p>${producto.nombre}</p>
+        <p>$${producto.precio}</p>
+        <div class="cantidad">
+        <p>Cantidad: ${producto.cantidad} </p>
+        <button class="agregar" id="agregar${producto.id}">
+        <img src="../imagenes/carrito/agregar.png" alt="agregar">
+        </button>
+        <button class="quitar" id="quitar${producto.id}">
+        <img src="../imagenes/carrito/quitar.png" alt="quitar" >
+        </button>
+        </div>
+        <button class="botonEliminar" id="eliminar${producto.id}">Eliminar</button>
       </div>
-      <button class="botonEliminar" id="eliminar${producto.id}">Eliminar</button>
     `;
       contenedorCarritoProductos.appendChild(div);
       const boton = document.getElementById(`eliminar${producto.id}`);
