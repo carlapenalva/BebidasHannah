@@ -285,6 +285,7 @@ body {
     background-color: white;
     font-size: small;
     width: 100vw;
+    border-bottom: solid 1px #321d58;
   }
   .infProducto {
     display: grid;

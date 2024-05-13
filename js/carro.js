@@ -33,6 +33,7 @@ function mostrarCarrito() {
         </div>
         <button class="botonEliminar" id="eliminar${producto.id}">Eliminar</button>
       </div>
+      
     `;
       contenedorCarritoProductos.appendChild(div);
       const boton = document.getElementById(`eliminar${producto.id}`);
