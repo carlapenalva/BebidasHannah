@@ -17,7 +17,7 @@ function mostrarCarrito() {
       div.classList.add("productoCarrito");
       div.innerHTML = `
       <div>
-        <img src="${producto.img}" class="imgCarrito">
+        <img src="${producto.img}" class="imgCarrito"> 
       </div>
       <div class="infProducto">
         <p>${producto.nombre}</p>
@@ -39,6 +39,14 @@ function mostrarCarrito() {
       const boton = document.getElementById(`eliminar${producto.id}`);
       boton.addEventListener("click", () => {
         eliminarDelCarrito(producto.id, productosEnCarrito);
+        Toastify({
+          text: "Producto eliminado",
+          duration: "2000",
+          style: {
+            background: "#e3e3e7",
+            color: "#321d58",
+          },
+        }).showToast();
       });
       const sumarCantidad = document.querySelector(`#agregar${producto.id}`);
       sumarCantidad.addEventListener("click", () => {
@@ -70,7 +78,7 @@ function mostrarCarrito() {
       total += producto.precio * producto.cantidad;
     });
   }
-  totalCompra.innerHTML = `<h2>Resumen compra</h2> <hr/> <h3> Total: $${total}</h3> <button id="vaciarCarrito">Vaciar Carrito</button>`;
+  totalCompra.innerHTML = `<h2>Resumen compra</h2> <h3> Total: $${total}</h3> <button id="vaciarCarrito">Vaciar Carrito</button>`;
   if (productosEnCarrito && productosEnCarrito.length > 0) {
     resumenVacio.classList.remove("visible");
     resumenVacio.classList.add("disabled");

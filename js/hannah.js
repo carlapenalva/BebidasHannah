@@ -141,6 +141,14 @@ function agregarCarrito(id) {
   if (!productoExistente) {
     const producto = arrayBebidas.find((bebida) => bebida.id === id);
     carrito.push(producto);
+    Swal.fire({
+      title: "Producto agregado al carrito",
+      text: "Producto agregado al carrito",
+      icon: "success",
+      showCancelButton: true,
+      confirmButtonText: "Seguir comprando",
+      cancelButtonText: "Ir al carrito",
+    });
   }
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }

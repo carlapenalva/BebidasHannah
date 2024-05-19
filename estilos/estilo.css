@@ -181,7 +181,7 @@ body {
   .abrirCarrito {
     background-color: none;
   }
-  button:hover {
+  .botonCompra:hover {
     background-color: rgb(185, 164, 224);
   }
   input {
@@ -251,9 +251,13 @@ body {
   .totalCompra h2,
   h3 {
     font-weight: lighter;
+    margin-bottom: 1em;
+  }
+  .totalCompra h2 {
+    border-bottom: solid 1px black;
   }
   .totalCompra button {
-    width: 100%;
+    width: 50%;
   }
   .disabled {
     display: none;
@@ -272,6 +276,7 @@ body {
   .parrafoVacio {
     margin-top: 2rem;
   }
+
   .listaCarrito {
     display: flex;
     flex-direction: column;
@@ -286,6 +291,7 @@ body {
     font-size: small;
     width: 100vw;
     border-bottom: solid 1px #321d58;
+    margin-top: 1em;
   }
   .infProducto {
     display: grid;
@@ -389,6 +395,9 @@ body {
     border: 1px solid #e3e3e7;
     border-radius: 0.5em;
   }
+  .totalCompra button {
+    width: 30%;
+  }
   .infProducto {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -396,6 +405,7 @@ body {
   .productoCarrito,
   .infProducto {
     width: 100%;
+    margin-top: 0;
   }
   .redesSociales {
     display: flex;
@@ -454,6 +464,10 @@ body {
     padding: 1em;
     margin: 3em 3em 3em 1.5em;
     height: 10em;
+  }
+
+  .totalCompra button {
+    width: 100%;
   }
   .carritoCompras {
     display: grid;
@@ -523,10 +537,6 @@ body {
     margin-bottom: 2em;
     background-color: #b192f3;
   }
-
-  /*.productoCarrito p {
-    margin: 0em 3em 0em 3em;
-  }*/
 
   .resumenCompra {
     background-color: #eeeef1;
