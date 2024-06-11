@@ -25,7 +25,7 @@ body {
     justify-content: space-around;
     align-items: center;
     gap: 1.5em;
-    background-color: #321d58;
+    background-color: #18191b;
     padding: 7em;
   }
   aside {
@@ -43,7 +43,7 @@ body {
     height: 2em;
   }
   .botonBuscador {
-    background-color: #321d58;
+    background-color: #18191b;
     border: none;
   }
   .botonBuscador img {
@@ -149,11 +149,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0px 1px 10px 0px rgb(0, 0, 0);
     margin-bottom: 10em;
-    border-radius: 20px;
-  }
-  .producto hr {
-    color: #321d58;
-    width: 100%;
+    border-radius: 10px;
   }
   .producto h2 {
     margin-bottom: 0.5em;
@@ -165,8 +161,8 @@ body {
     width: 130px;
     padding: 8px;
     background-color: #171717;
-    border-radius: 20px;
-    border: 2px solid #b192f3;
+    border-radius: 10px;
+    border: 1px solid #691c1c;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -182,7 +178,7 @@ body {
     background-color: none;
   }
   .botonCompra:hover {
-    background-color: rgb(185, 164, 224);
+    background-color: #691c1c;
   }
   input {
     border: 1px solid rgb(185, 164, 224);
@@ -267,10 +263,10 @@ body {
     background-color: white;
     padding: 1em;
     border: none;
-    color: #544275;
+    color: #691c1c;
   }
   .botonEliminar:hover {
-    color: mediumpurple;
+    color: #bb8c8c;
   }
 
   .parrafoVacio {
@@ -501,14 +497,14 @@ body {
   }
 
   .listaProductos > .producto:hover {
-    color: #4d3774;
+    color: #691c1c;
   }
 
   .listaProductos img {
     width: 300px;
     height: 300px;
     margin-bottom: 18px;
-    border-radius: 20px 20px 0 0;
+    /*border-radius: 20px 20px 0 0;*/
   }
   .carritoCompras {
     display: grid;
@@ -535,7 +531,7 @@ body {
   .carritoVacio button {
     padding: 1em;
     margin-bottom: 2em;
-    background-color: #b192f3;
+    background-color: #bb8c8c;
   }
 
   .resumenCompra {

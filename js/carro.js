@@ -25,10 +25,10 @@ function mostrarCarrito() {
         <div class="cantidad">
         <p>Cantidad: ${producto.cantidad} </p>
         <button class="agregar" id="agregar${producto.id}">
-        <img src="../imagenes/carrito/agregar.png" alt="agregar">
+        <img src="../imagenes/carrito/agregar2.png" alt="agregar">
         </button>
         <button class="quitar" id="quitar${producto.id}">
-        <img src="../imagenes/carrito/quitar.png" alt="quitar" >
+        <img src="../imagenes/carrito/quitar2.png" alt="quitar" >
         </button>
         </div>
         <button class="botonEliminar" id="eliminar${producto.id}">Eliminar</button>
