@@ -43,8 +43,8 @@ function mostrarCarrito() {
           text: "Producto eliminado",
           duration: "2000",
           style: {
-            background: "#e3e3e7",
-            color: "#321d58",
+            background: "#bb8c8c",
+            color: "#691c1c",
           },
         }).showToast();
       });
