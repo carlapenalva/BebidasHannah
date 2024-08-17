@@ -59,7 +59,7 @@ body {
   }
   .nav img {
     width: 1em;
-    margin: 0.5em;
+    margin: 1em 0.5em 0 0.5em;
   }
   /*INDEX*/
 
@@ -111,17 +111,21 @@ body {
     align-items: center;
   }
   .bebidaPrincipal img {
-    width: 6em;
-  }
-  .parrafoSecundario {
-    margin: 1em 1em 1em 1em;
-  }
-  .parrafoPrincipal {
-    margin: 1em 0 1em 0;
-    background-color: #bb8c8c;
-    padding: 5em 1em 5em 1em;
+    width: 10em;
   }
 
+  .parrafoSecundario,
+  .parrafoPrincipal {
+    margin: 1em 1em 1em 1em;
+    padding: 5em 1em 5em 1em;
+  }
+  .seccionMobile {
+    padding: 5em 0 5em 0;
+    background-color: #691c1c;
+  }
+  .seccionMobile img {
+    width: 100%;
+  }
   .destacados {
     display: flex;
     flex-direction: column;
@@ -239,6 +243,11 @@ body {
   h3 {
     margin-bottom: 1em;
     font-weight: lighter;
+  }
+  .resumenCompra {
+    padding: 1em;
+    margin: 5em 5em 5em 2em;
+    height: 10em;
   }
   .totalCompra {
     display: flex;
@@ -361,6 +370,9 @@ body {
     font-size: 1.5em;
     font-weight: normal;
   }
+  .seccionMobile {
+    display: none;
+  }
   .bebidaPrincipal {
     display: flex;
     flex-direction: row;
@@ -368,10 +380,10 @@ body {
     align-items: center;
   }
   .bebidaPrincipal img {
-    width: 10em;
+    width: 12em;
   }
-  .parrafoPrincipal {
-    background-color: #e3e3e7;
+  .parrafoPrincipal,
+  .parrafoSecundario {
     padding: 0;
   }
   .listaProductos {
