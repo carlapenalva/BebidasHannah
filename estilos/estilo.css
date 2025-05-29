@@ -17,6 +17,16 @@ body {
 
 @media (min-width: 150px) {
   /*HEADER*/
+  header {
+    background-color: #18191b;
+    padding: 20px 10px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header img {
+    width: 5em;
+  }
   /*INDEX*/
   .products-information {
     margin-top: 5em;
@@ -116,17 +126,24 @@ body {
     border-radius: 5px;
     text-align: center;
   }
-  .hola {
+  .buscando {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 5px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  .hola h2 {
-    font-size: 1em;
-    font-weight: normal;
+  .buscador {
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
   }
 
   /*CARRITO*/
@@ -243,32 +260,11 @@ body {
     border-top: solid 1px #b3b3b3;
     color: #eeeef1;
   }
-  .redesSociales {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .red {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1em;
-    margin-top: 1em;
-  }
+
   footer h3 {
     font-size: small;
     margin-top: 1em;
     margin-left: 1.5em;
-  }
-  .formulario {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2em;
   }
   footer h4 {
     font-size: small;
@@ -281,6 +277,15 @@ body {
 }
 
 @media (min-width: 575px) {
+  header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header img {
+    width: 7em;
+  }
   .sectionIndex h3 {
     font-size: 1em;
     font-weight: normal;
@@ -332,13 +337,6 @@ body {
 }
 
 @media (min-width: 900px) {
-  .buscador {
-    width: 20em;
-    height: 2em;
-  }
-  .botonBuscador img {
-    width: 2.5em;
-  }
   .nav {
     display: flex;
     flex-direction: row;
@@ -450,13 +448,6 @@ body {
   }
 }
 
-header {
-  background-color: #18191b;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .menu-toggle {
   display: none;
   font-size: 26px;
@@ -465,9 +456,7 @@ header {
   color: white;
   cursor: pointer;
 }
-header img {
-  width: 7em;
-}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -486,7 +475,7 @@ li a:hover {
   color: #bb8c8c;
 }
 
-@media (max-width: 530px) {
+@media (max-width: 760px) {
   .nav-links {
     display: none;
     flex-direction: column;
