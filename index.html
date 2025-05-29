@@ -10,38 +10,80 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <a href="index.html">
-          <img src="./imagenes/logo/logoHannah.png" alt="logo" />
-        </a>
-      </div>
-      <div>
-        <nav class="nav">
-          <a href="./secciones/productos.html">
-            <p>
-              <img src="./imagenes/nav/productos.png" alt="productos" />
-              Productos
-            </p>
-          </a>
-          <a href="./secciones/carrito.html">
-            <p>
-              <img src="./imagenes/nav/carritoCompras.png" alt="Carrito" />
-              Carrito
-            </p>
-          </a>
-        </nav>
-      </div>
+      <a href="index.html">
+        <img src="./imagenes/logo/logoHannah.png" alt="logo" />
+      </a>
+      <nav>
+        <button class="menu-toggle" id="toggle-menu">☰</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="./secciones/productos.html">Productos</a></li>
+          <li><a href="./secciones/carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <hr />
-    <div class="titulo">
-      <h1>Brindamos por los Mejores Momentos</h1>
+    <section class="hero">
+      <h2>Bienvenido a Bebidas Hannah</h2>
       <p>
-        En Hanah, cada bebida es una celebración. Nos enorgullece ofrecer una
-        variedad de opciones que elevan cualquier momento, desde reuniones
-        casuales hasta grandes celebraciones.
+        Descubrí nuestras bebidas exclusivas, seleccionadas para quienes saben
+        disfrutar. Calidad premium, sabor inolvidable.
       </p>
-    </div>
+      <p>
+        ¡Explora nuestro catálogo y encontra la bebida perfecta para cada
+        ocasión!
+      </p>
+      <button>Ver productos</button>
+    </section>
+
+    <section class="products-preview">
+      <h3>Nuestros Favoritos</h3>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="./imagenes/index/redLabel.png" alt="Producto" />
+          <div class="info">
+            <h4>Whisky Escocés</h4>
+            <p>Una mezcla suave y elegante, ideal para cualquier ocasión.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="./imagenes/index/ginBotella.png" alt="Producto" />
+          <div class="info">
+            <h4>Gin Premium</h4>
+            <p>Botánicos seleccionados para una experiencia única.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="./imagenes/index/wine-bottle.png" alt="Producto" />
+          <div class="info">
+            <h4>Vino Malbec</h4>
+            <p>Intenso y equilibrado, perfecto para maridar.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="./imagenes/index/wine-bottle.png" alt="Producto" />
+          <div class="info">
+            <h4>Vino Malbec</h4>
+            <p>Intenso y equilibrado, perfecto para maridar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="products-information">
+        <p class="product-information">
+          En Hanah Bebidas, nos enorgullece ofrecer un servicio personalizado y
+          una experiencia de compra inigualable. <br />
+          Donde la calidad y el sabor son prioritarios.
+        </p>
+        <p class="product-information">
+          Visítanos en nuestro local ubicado en la hermosa ciudad de Mar del
+          Plata, donde podrás explorar nuestra amplia selección de bebidas de
+          las mejores marcas. <br />
+          Si no te encontras en esta ciudad, no te preocupes! Realizamos envíos
+          a todo el país, para que puedas disfrutar de nuestras bebidas
+          dondequiera que estés.
+        </p>
+      </div>
+    </section>
     <section class="sectionIndex">
       <div class="envios" data-aos="zoom-in-down">
         <img src="imagenes/envios.png" alt="envios" />
@@ -60,92 +102,44 @@
         <h3>Mar del Plata</h3>
       </div>
     </section>
-    <section class="bebidaPrincipal">
-      <img data-aos="fade-up" src="./imagenes/Bebidas.png" alt="mardelplata" />
-      <p class="parrafoSecundario" data-aos="fade-up">
-        En Hanah Bebidas, nos apasiona crear experiencias inolvidables a través
-        de nuestras bebidas destacadas. Fundada con el compromiso de ofrecer
-        productos de alta calidad, nuestra misión es deleitar a nuestros
-        clientes con sabores únicos y refrescantes. Actuamos como curadores
-        expertos, eligiendo cuidadosamente vinos, licores, cervezas y refrescos
-        de marcas reconocidas y emergentes. Nuestro objetivo es brindarte una
-        experiencia de compra única, donde la calidad y el sabor son
-        prioritarios. Con un enfoque en la diversidad y la excelencia, Hanah
-        Bebidas es tu destino confiable para descubrir nuevas marcas y disfrutar
-        de tus favoritas. <br />
-        ¡Explora nuestro catálogo y encuentra la bebida perfecta para cada
-        ocasión! Nos enorgullece ser una marca innovadora y cercana, dedicada a
-        acompañarte en cada momento especial. ¡Brinda con nosotros y descubre la
-        diferencia que hace Hanah Bebidas!
-      </p>
-    </section>
-    <div class="seccionMobile">
-      <a href="./secciones/productos.html">
-        <img src="./imagenes/mobile/seccionProductos.png" alt="productos" />
-      </a>
-    </div>
-    <section class="bebidaPrincipal">
-      <p class="parrafoPrincipal" data-aos="fade-up">
-        Visítanos en nuestro local ubicado en la hermosa ciudad de Mar del
-        Plata, donde podrás explorar nuestra amplia selección de bebidas de las
-        mejores marcas. En Hanah Bebidas, nos enorgullece ofrecer un servicio
-        personalizado y una experiencia de compra inigualable. Y si no estás en
-        Mar del Plata, no te preocupes. Realizamos envíos a todo el país, para
-        que puedas disfrutar de nuestras bebidas dondequiera que estés.
-        ¡Descubre nuestra tienda y recibe tus productos favoritos en la
-        comodidad de tu hogar!
-      </p>
-      <img
-        data-aos="fade-up"
-        src="./imagenes/marDelPlata1.png"
-        alt="mardelplata"
-      />
-    </section>
-    <footer>
-      <div class="redesSociales">
-        <div class="red">
-          <a href="https://www.instagram.com/">
-            <img src="imagenes/redes/instagram.png" alt="instagram" />
-          </a>
-          <h3>Hannah Bebidas</h3>
+    <section class="about">
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="info">
+            <p>
+              Hanah bebidas fue fundada con el compromiso de ofrecer productos y
+              servicios de alta calidad. Nuestra misión es deleitar a nuestros
+              clientes con sabores únicos y refrescantes.
+            </p>
+          </div>
         </div>
-        <div class="red">
-          <a href="https://www.whatsapp.com/">
-            <img src="imagenes/redes/whatsapp.png" alt="whatsapp" />
-          </a>
-          <h3>(222) 2589022</h3>
+        <div class="about-card">
+          <div class="info">
+            <p>
+              Somos una marca innovadora y cercana, dedicada a acompañarte en
+              cada momento especial, ofreciendo una variedad de opciones que
+              elevan cualquier momento.
+            </p>
+          </div>
         </div>
-        <div class="red">
-          <a href="https://www.facebook.com/">
-            <img src="./imagenes/redes/facebook.png" alt="facebook" />
-          </a>
-          <h3>Hannah Bebidas</h3>
+        <div class="about-card">
+          <div class="info">
+            <p>
+              Con un enfoque en la diversidad y la excelencia, Hanah Bebidas es
+              tu destino confiable para descubrir nuevas marcas y disfrutar de
+              tus favoritas. En Hanah, cada bebida es una celebración.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="formulario">
-        <h4>
-          Completa el formulario con tus datos y te respondemos a la brevedad
-        </h4>
-        <form action="">
-          <label for="">
-            <input type="text" />
-          </label>
-          <label for="">
-            <input type="text" />
-          </label>
-          <label for="">
-            <input type="text" />
-          </label>
-          <label for="">
-            <input type="text" />
-          </label>
-        </form>
-      </div>
-      <h4 class="paginaCreada">© Pagina creada por Penalva Carla</h4>
-    </footer>
+    </section>
+
+    <footer>&copy; 2025 Bebidas Hannah. Todos los derechos reservados.</footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+    <script src="./js/navbar.js"></script>
   </body>
 </html>

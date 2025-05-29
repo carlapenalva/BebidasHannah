@@ -9,11 +9,10 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <a href="../index.html">
-          <img src="../imagenes/logo/logoHannah.png" alt="logo" />
-        </a>
-      </div>
+      <a href="../index.html">
+        <img src="../imagenes/logo/logoHannah.png" alt="logo" />
+      </a>
+
       <div class="aside">
         <div class="buscando">
           <input
@@ -27,51 +26,23 @@
           </button>
         </div>
       </div>
-      <div>
-        <nav class="nav">
-          <a href="../index.html">
-            <p><img src="../imagenes/nav/inicio.png" alt="Inicio" />Inicio</p>
-          </a>
-          <a href="../secciones/carrito.html">
-            <p>
-              <img
-                src="../imagenes/nav/carritoCompras.png"
-                alt="Carrito"
-              />Carrito
-            </p>
-          </a>
-        </nav>
-      </div>
+      <nav>
+        <button class="menu-toggle" id="toggle-menu">☰</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./productos.html">Productos</a></li>
+          <li><a href="./carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
     </header>
     <hr />
     <div class="titulo">
-      <h1>Nuestras <b> bebidas </b> principales</h1>
+      <h1>Compra tu bebida favorita clickeando</h1>
     </div>
     <div class="listaProductos" id="listaProductos"></div>
-    <footer>
-      <div class="redesSociales">
-        <div class="red">
-          <a href="https://www.facebook.com/">
-            <img src="../imagenes/redes/facebook.png" alt="facebook" />
-          </a>
-          <h3>Hannah Bebidas</h3>
-        </div>
-        <div class="red">
-          <a href="https://www.instagram.com/">
-            <img src="../imagenes/redes/instagram.png" alt="instagram" />
-          </a>
-          <h3>Hannah Bebidas</h3>
-        </div>
-        <div class="red">
-          <a href="https://www.whatsapp.com/">
-            <img src="../imagenes/redes/whatsapp.png" alt="whatsapp" />
-          </a>
-          <h3>(222) 2589022</h3>
-        </div>
-      </div>
-      <h4>© Todos los derechos reservados - Penalva Carla</h4>
-    </footer>
+    <footer>&copy; 2025 Bebidas Hannah. Todos los derechos reservados.</footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/hannah.js"></script>
+    <script src="../js/navbar.js"></script>
   </body>
 </html>
