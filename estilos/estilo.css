@@ -291,7 +291,57 @@ body {
     color: #b3b3b3;
   }
 }
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links,
+li,
+a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+li a:hover {
+  color: #bb8c8c;
+}
+@media (max-width: 760px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 7em;
+    right: 1em;
+    background-color: #691c1cc5;
+    width: 100%;
+    height: 20em;
+    padding: 20px;
+    z-index: 99;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1em;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -534,4 +584,14 @@ footer {
 
 .botonEliminar:hover {
   color: #e74c3c;
+}
+.swal-btn-confirm {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.swal-btn-cancel {
+  background-color: #e74c3c !important;
+  color: white !important;
+  margin-left: 0.5em;
 }

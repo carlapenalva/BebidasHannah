@@ -143,11 +143,20 @@ function agregarCarrito(id) {
     carrito.push(producto);
     Swal.fire({
       title: "Producto agregado al carrito",
-      text: "Producto agregado al carrito",
+      text: "¿Qué deseas hacer ahora?",
       icon: "success",
       showCancelButton: true,
       confirmButtonText: "Seguir comprando",
       cancelButtonText: "Ir al carrito",
+      customClass: {
+        confirmButton: "swal-btn-confirm",
+        cancelButton: "swal-btn-cancel",
+      },
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.cancel) {
+        // Redirigir al carrito si elige "Ir al carrito"
+        window.location.href = "../secciones/carrito.html";
+      }
     });
   }
   localStorage.setItem("carrito", JSON.stringify(carrito));
