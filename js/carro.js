@@ -25,10 +25,10 @@ function mostrarCarrito() {
         <div class="cantidad">
         <p>Cantidad: ${producto.cantidad} </p>
         <button class="agregar" id="agregar${producto.id}">
-        <img src="../imagenes/carrito/agregar2.png" alt="agregar">
+        +
         </button>
         <button class="quitar" id="quitar${producto.id}">
-        <img src="../imagenes/carrito/quitar2.png" alt="quitar" >
+        -
         </button>
         </div>
         <button class="botonEliminar" id="eliminar${producto.id}">Eliminar</button>
@@ -78,7 +78,7 @@ function mostrarCarrito() {
       total += producto.precio * producto.cantidad;
     });
   }
-  totalCompra.innerHTML = `<h2>Resumen compra</h2> <h3> Total: $${total}</h3> <button id="vaciarCarrito">Vaciar Carrito</button>`;
+  totalCompra.innerHTML = `<h2>Resumen compra</h2><hr/><br/><h3> Total: $${total}</h3> <button class="botonVaciar" id="vaciarCarrito">VACIAR CARRITO</button>`;
   if (productosEnCarrito && productosEnCarrito.length > 0) {
     resumenVacio.classList.remove("visible");
     resumenVacio.classList.add("disabled");
